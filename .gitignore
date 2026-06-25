@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+
+# Backups & drafts
+*.bak
+preview-*.html
+
+# Internal docs / source assets (not part of the published site)
+docs/
+intercom/
+DESIGN.md
+*.pdf
+*.xlsx
+*.docx
+
+# Figma source archives & working files
+img/Лого/

@@ -1,0 +1,18 @@
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="EXPORT / StoreKMV favicon / light">
+<rect width="320" height="320" rx="24" fill="#FAFAF7"/>
+<g id="Favicon tile">
+<rect x="41" y="41" width="238" height="238" rx="43" fill="white"/>
+<rect x="41" y="41" width="238" height="238" rx="43" stroke="#E0E0E0" stroke-width="2"/>
+<g id="Building mark">
+<line id="Baseline" x1="75.5598" y1="207.24" x2="244.76" y2="207.24" stroke="#0D1B2A" stroke-width="3.6" stroke-linecap="round"/>
+<path id="Roof" d="M80.9609 144.24L165.201 101.76L242.961 132V147.84L165.921 117.6L80.9609 159.36V144.24Z" fill="#0D1B2A"/>
+<path id="Left bay" d="M83.8398 162.24L114.08 147.84V198.96H83.8398V162.24Z" fill="#0D1B2A"/>
+<path id="Middle bay" d="M119.84 144.96L152.96 128.4V198.96H119.84V144.96Z" fill="#0D1B2A"/>
+<path id="Center bay" d="M158.721 125.52L174.561 132.72V198.96H158.721V125.52Z" fill="#0D1B2A"/>
+<path id="Orange warehouse" d="M180.32 134.88L237.92 156.48V198.96H180.32V134.88Z" fill="#F97316"/>
+<rect id="Door" x="216.32" y="176.64" width="14.4" height="22.32" rx="0.72" fill="white"/>
+</g>
+</g>
+</g>
+</svg>
