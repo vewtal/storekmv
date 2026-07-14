@@ -1,0 +1,9 @@
+{
+  "name": "storekmv-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Сайт производственно-складского кластера StoreKMV (Георгиевск)",
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  }
+}

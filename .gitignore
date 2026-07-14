@@ -1,6 +1,11 @@
 # OS
 .DS_Store
 
+# Secrets & deps (для serverless-функции форм)
+.env
+.env.local
+node_modules/
+
 # Backups & drafts
 *.bak
 preview-*.html
