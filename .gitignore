@@ -20,3 +20,6 @@ DESIGN.md
 
 # Figma source archives & working files
 img/Лого/
+
+# Photo sources (originals) — any subfolder under img/warehouses is source-only
+img/warehouses/*/
