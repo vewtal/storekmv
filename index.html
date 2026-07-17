@@ -195,6 +195,13 @@ p{color:var(--muted)}
 .op-item svg{flex-shrink:0;color:var(--orange);margin-top:4px}
 .op-item-text{font-size:0.9375rem;color:rgba(255,255,255,0.85)}
 
+/* Агро-блок внутри секции хранения */
+.agro-callout{margin-top:56px;padding:32px 36px;background:var(--bg-light);border:1px solid var(--border);border-left:4px solid var(--orange);border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;scroll-margin-top:88px}
+.agro-text{flex:1 1 480px;max-width:720px}
+.agro-callout h3{color:var(--navy);margin-bottom:8px}
+.agro-callout p{font-size:0.9375rem}
+.agro-callout .btn{flex:0 0 auto}
+
 /* Light Industrial */
 .scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:48px}
 .scenario-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:28px;transition:all .25s}
@@ -327,8 +334,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <li><a href="#rent">Склады</a></li>
       <li><a href="#storage">Хранение</a></li>
       <li><a href="#marketplaces">Маркетплейсы</a></li>
-      <li><a href="#agro">Агрохранение</a></li>
       <li><a href="#light-industrial">Производство</a></li>
+      <li><a href="pages/equipment.html">Техника</a></li>
       <li><a href="pages/investors.html">Инвесторам</a></li>
     </ul>
     <div class="nav-right">
@@ -679,6 +686,14 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
         </div>
       </div>
     </div>
+    <div class="agro-callout" id="agro">
+      <div class="agro-text">
+        <span class="section-label">Сезон 2026/27 · Агрохранение</span>
+        <h3>Примем зерно и овощи на хранение с сентября</h3>
+        <p>Сухие корпуса высотой до 6 м: 155 Лит.П — две секции по 768 м² с кран-балкой и пандусом, 155/9 — отдельный корпус 630 м² со своей парковкой. Закрытая территория с охраной и КПП, прямой выезд на Р-217 «Кавказ». Площади на сезон бронируются заранее.</p>
+      </div>
+      <button class="btn btn-primary" data-modal="agro">Забронировать площади на сезон</button>
+    </div>
   </div>
 </section>
 
@@ -719,18 +734,6 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
           <div class="op-item-text">Товар на закрытой охраняемой территории: КПП, видеонаблюдение, охрана 24/7</div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="agro">
-  <div class="container">
-    <span class="section-label">Сезон 2026/27</span>
-    <h2>Примем зерно и овощи на хранение с сентября</h2>
-    <p class="lead">Сухие корпуса высотой до 6 м под сельхозпродукцию: 155 Лит.П — две секции по 768 м² с кран-балкой и пандусом, 155/9 — отдельный корпус 630 м² со своей парковкой. Закрытая территория с охраной и КПП, прямой выезд на Р-217 «Кавказ». Площади на сезон бронируются заранее — количество ограничено.</p>
-    <div class="service-actions">
-      <button class="btn btn-primary btn-lg" data-modal="agro">Забронировать площади на сезон</button>
-      <button class="btn btn-secondary btn-lg" data-modal="view">Записаться на показ</button>
     </div>
   </div>
 </section>
