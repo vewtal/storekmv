@@ -37,7 +37,8 @@ storekmv-website/
 | Каталог (`pages/warehouses.html`) | Готов: фильтры, карточки по 7 объектам |
 | Техника (`pages/equipment.html`) | Готова: 10 позиций Kandela с фото и ценами |
 | Инвесторам (`pages/investors.html`) | Готова |
-| Маркетплейсы | `#marketplaces` (фулфилмент) + `#wb-hub` (помещение под хаб WB) |
+| Маркетплейсы | `#marketplaces` на главной — фулфилмент для селлеров |
+| Партнёрский хаб RWB | Секция `#wb-hub` на странице «Инвесторам» |
 | Формы лидогенерации | Код готов (`api/lead.js`); нужен деплой функции и SMTP |
 | Яндекс.Метрика | Не подключена — нужен номер счётчика |
 | SEO | title/description/OG, og:image 1200×630, LocalBusiness, robots, sitemap |
