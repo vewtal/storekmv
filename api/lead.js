@@ -47,7 +47,37 @@ function buildText(p) {
   return lines.join('\n');
 }
 
+// Origins, которым разрешён кросс-доменный POST. Нужны, когда страница живёт на Tilda,
+// а функция — на отдельном домене Vercel. Переопределяется переменной окружения
+// LEAD_ALLOWED_ORIGINS (список через запятую).
+const DEFAULT_ALLOWED_ORIGINS = [
+  'https://storekmv.ru',
+  'https://www.storekmv.ru',
+];
+
+function allowedOrigins() {
+  const raw = process.env.LEAD_ALLOWED_ORIGINS;
+  if (!raw) return DEFAULT_ALLOWED_ORIGINS;
+  return raw.split(',').map((s) => s.trim()).filter(Boolean);
+}
+
+function applyCors(req, res) {
+  const origin = req.headers && req.headers.origin;
+  if (origin && allowedOrigins().includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Vary', 'Origin');
+  }
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Access-Control-Max-Age', '86400');
+}
+
 module.exports = async function handler(req, res) {
+  applyCors(req, res);
+  if (req.method === 'OPTIONS') {
+    res.status(204).end();
+    return;
+  }
   if (req.method !== 'POST') {
     res.status(405).json({ ok: false, error: 'method_not_allowed' });
     return;

@@ -61,8 +61,8 @@ p{color:var(--muted)}
 .logo svg{color:var(--orange)}
 .logo-wm{text-transform:uppercase}
 .logo-wm>span{color:var(--orange)}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{font-size:0.9375rem;font-weight:500;color:var(--navy);transition:color .15s}
+.nav-links{display:flex;gap:22px;list-style:none}
+.nav-links a{font-size:0.9375rem;font-weight:500;color:var(--navy);transition:color .15s;white-space:nowrap}
 .nav-links a:hover,.nav-links a.active{color:var(--orange)}
 .nav-right{display:flex;align-items:center;gap:20px}
 .nav-phone{display:inline-flex;align-items:center;gap:6px;font-size:0.9375rem;font-weight:600;color:var(--navy);white-space:nowrap}
@@ -129,9 +129,11 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);font-size:0.8125rem;color:rgba(255,255,255,0.45)}
 .footer-bottom-links{display:flex;gap:24px}
 
-@media (max-width:980px){
+@media (max-width:1180px){
   .nav-links,.nav-phone{display:none}
   .menu-toggle{display:inline-flex}
+}
+@media (max-width:980px){
   .investors-grid,.scenario-grid{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr;gap:32px}
 }
@@ -155,6 +157,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <li><a href="../index.html#rent">Склады</a></li>
       <li><a href="../index.html#storage">Хранение</a></li>
       <li><a href="../index.html#marketplaces">Маркетплейсы</a></li>
+      <li><a href="../index.html#wb-hub">Хаб WB</a></li>
       <li><a href="../index.html#light-industrial">Производство</a></li>
       <li><a href="equipment.html">Техника</a></li>
       <li><a href="investors.html" class="active">Инвесторам</a></li>

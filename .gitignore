@@ -10,6 +10,9 @@ node_modules/
 *.bak
 preview-*.html
 
+# Build output (собирается командой python3 build-tilda.py)
+dist/
+
 # Internal docs / source assets (not part of the published site)
 docs/
 intercom/
