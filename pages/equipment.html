@@ -3,15 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Купить уборочную технику и электротрициклы Kandela в Георгиевске и КМВ — StoreKMV</title>
-<meta name="description" content="Продажа техники Kandela в Георгиевске (КМВ): вакуумная подметально-уборочная машина LM-1500, поломоечная FC-530, грузовые электротрициклы TRC1000–TRC1500, газонокосилки-роботы RCLM500/RCLM1200. Цены, характеристики, заявка.">
-<meta name="keywords" content="складская техника, рохля, гидравлическая тележка, штабелёр, поломоечная машина, мини-трактор, подъёмник Георгиевск КМВ">
-<link rel="canonical" href="https://storekmv.ru/equipment.html">
+<title>Купить уборочную технику Kandela в Георгиевске | StoreKMV</title>
+<meta name="description" content="Техника Kandela в Георгиевске и на КМВ: подметально-уборочная LM-1500, поломоечная FC-530, электротрициклы TRC1000–TRC1500, газонокосилки-роботы.">
+<link rel="canonical" href="https://storekmv.ru/equipment">
 <link rel="icon" type="image/svg+xml" href="../img/dark.svg">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <meta property="og:title" content="Уборочная техника и электротрициклы Kandela — StoreKMV">
 <meta property="og:description" content="Продажа техники Kandela в Георгиевске и КМВ: подметально-уборочная LM-1500, поломоечная FC-530, электротрициклы TRC1000–TRC1500, газонокосилки-роботы.">
-<meta property="og:url" content="https://storekmv.ru/equipment.html">
+<meta property="og:url" content="https://storekmv.ru/equipment">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -184,6 +183,26 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   .spec-table{grid-template-columns:1fr}
   .product-actions{flex-direction:column}
 }
+
+/* Форма: согласие, ошибка, honeypot (как на главной) */
+.form-error{display:none;background:#FBE3E1;color:#B02A1E;padding:12px 14px;border-radius:4px;font-size:0.875rem;margin-top:12px}
+.form-error.show{display:block}
+.consent{display:flex;align-items:flex-start;gap:9px;margin:14px 0;font-size:0.8125rem;color:var(--muted);line-height:1.45;cursor:pointer}
+.consent input{width:auto;margin:2px 0 0;flex:0 0 auto}
+.consent a{color:var(--orange);text-decoration:underline}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* Мобильная ширина без горизонтального скролла (ревью 2026-10-04).
+   Колонка 1fr не сжимается уже своего содержимого (это minmax(auto,1fr)), поэтому
+   длинный заголовок или широкая картинка распирали страницу; кнопки запрещали перенос. */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .stats-row,.hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .btn{white-space:normal;text-align:center}
+  .nav-right > .btn{display:none}
+}
 </style>
 </head>
 <body>
@@ -226,7 +245,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 <section class="page-hero">
   <div class="container inner">
     <span class="section-label">Продажа техники</span>
-    <h1 class="h1">Уборочная техника и электротрициклы <span>Kandela</span></h1>
+    <h1 class="h1">Уборочная техника и электротрициклы <span>Kandela</span> в Георгиевске</h1>
     <p>Продажа техники Kandela в Георгиевске и КМВ: вакуумная подметально-уборочная машина, поломоечная машина, грузовые электротрициклы и радиоуправляемые газонокосилки. Характеристики и цены — в карточках; наличие и сроки поставки подтверждаем по заявке.</p>
   </div>
 </section>
@@ -250,7 +269,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
         <div class="footer-logo">
           <img src="../img/logo-dark.svg" alt="StoreKMV — производственно-складской комплекс" width="268" height="38" style="display:block;height:38px;width:auto">
         </div>
-        <p class="footer-desc">Производственно-складской комплекс в Георгиевске. Склады, ответственное хранение, производственные блоки и продажа техники на одной охраняемой территории.</p>
+        <p class="footer-desc">Производственно-складская площадка в Георгиевске: склады трёх температурных режимов, блоки под производство, ответственное хранение, сезонное агрохранение и офисная инфраструктура на закрытой территории 3,6 га.</p>
       </div>
       <div class="footer-col">
         <h4>Направления</h4>
@@ -325,9 +344,12 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <div class="form-field"><label for="fcompany">Компания</label><input id="fcompany" name="fcompany" type="text"></div>
       <div class="form-field"><label for="fphone">Телефон *</label><input id="fphone" name="fphone" type="tel" required></div>
       <div class="form-field"><label for="fcomment">Комментарий</label><textarea id="fcomment" name="fcomment" rows="3"></textarea></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Отправить заявку</button>
-      <p class="modal-note">Оставляя заявку, вы разрешаете связаться с вами для ответа по обращению.</p>
+      
+      <div class="hp-field" aria-hidden="true"><label for="fwebsite">Оставьте это поле пустым</label><input id="fwebsite" name="fwebsite" type="text" tabindex="-1" autocomplete="off"></div>
+      <label class="consent"><input type="checkbox" id="fconsent" name="fconsent" required> Я согласен на обработку персональных данных и ознакомлен с <a href="../privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>
+      <button type="submit" id="leadSubmit" class="btn btn-primary" style="width:100%;justify-content:center">Отправить заявку</button>
       <div class="form-success" id="formSuccess">Спасибо! Мы свяжемся с вами в течение рабочего дня.</div>
+      <p class="form-error" id="formError" role="alert"></p>
     </form>
   </div>
 </div>
@@ -498,6 +520,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   const fproduct=document.getElementById('fproduct');
   fproduct.innerHTML='<option value="">Не выбран / нужна консультация</option>'+products.filter(p=>p.on!==false).map(p=>'<option value="'+esc(p.id)+'">'+esc(CATS[p.cat])+' — '+esc(p.name)+'</option>').join('');
   function openLead(id){
+    const tP=id?byId(id):null;
+    if(window.storekmvTildaLead&&window.storekmvTildaLead({source:'Техника: заявка',object:tP?(CATS[tP.cat]+' — '+tP.name):''}))return;
     document.getElementById('formSuccess').classList.remove('show');
     fproduct.value=(id&&byId(id))?id:'';
     leadOverlay.classList.add('open');
@@ -527,16 +551,135 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     mobileNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');
   }));
 
-  // ===== Отправка формы (stub — подключить backend endpoint) =====
-  document.getElementById('leadForm').addEventListener('submit',e=>{
+  // ===== Отправка формы: тот же эндпоинт, что на главной =====
+  // На Tilda адрес функции задаёт window.STOREKMV_LEAD_ENDPOINT (вставляет build-tilda.py).
+  // Сообщение об успехе — только после ответа сервера, иначе заявка теряется молча.
+  const FORM_ENDPOINT=window.STOREKMV_LEAD_ENDPOINT||'/api/lead';
+  function collectUTM(){
+    const p=new URLSearchParams(location.search),o={};
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k=>{if(p.get(k))o[k]=p.get(k);});
+    return o;
+  }
+  const leadFormEl=document.getElementById('leadForm');
+  leadFormEl.addEventListener('submit',async e=>{
     e.preventDefault();
+    const errEl=document.getElementById('formError');
+    const okEl=document.getElementById('formSuccess');
+    okEl.classList.remove('show');errEl.classList.remove('show');
+    const showErr=m=>{errEl.textContent=m;errEl.classList.add('show');};
     const name=document.getElementById('fname').value.trim();
     const phone=document.getElementById('fphone').value.trim();
-    if(!name||!phone){(!name?document.getElementById('fname'):document.getElementById('fphone')).focus();return;}
-    // TODO: отправка на backend (Tilda Forms / собственный endpoint)
-    document.getElementById('formSuccess').classList.add('show');
-    e.target.reset();
+    if(!name){document.getElementById('fname').focus();return showErr('Укажите имя.');}
+    if(!phone){document.getElementById('fphone').focus();return showErr('Укажите телефон.');}
+    if(!document.getElementById('fconsent').checked){return showErr('Необходимо согласие на обработку персональных данных.');}
+    if(document.getElementById('fwebsite').value){return;} // honeypot
+    const sel=byId(fproduct.value);
+    const payload={
+      source:'equipment',
+      sourceTitle:'Заявка на технику',
+      name:name,
+      company:document.getElementById('fcompany').value.trim(),
+      phone:phone,
+      comment:document.getElementById('fcomment').value.trim(),
+      context:{product:sel?(CATS[sel.cat]+' — '+sel.name):'не выбран / консультация'},
+      utm:collectUTM(),
+      consent:true,
+      page:location.href,
+      ts:new Date().toISOString()
+    };
+    const btn=document.getElementById('leadSubmit');
+    const orig=btn.textContent;btn.disabled=true;btn.textContent='Отправляем…';
+    try{
+      const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      if(!r.ok)throw new Error('status '+r.status);
+      okEl.classList.add('show');
+      leadFormEl.reset();
+      if(window.ym&&window.YM_ID)ym(window.YM_ID,'reachGoal','lead_submit');
+    }catch(ex){
+      showErr('Не удалось отправить заявку. Позвоните нам: +7 928-630-63-44 или напишите на i@vllobanov.ru');
+    }finally{
+      btn.disabled=false;btn.textContent=orig;
+    }
   });
+})();
+</script>
+<script>
+/* Доступность модалок (ревью 2026-10-04). Модалки открываются и закрываются в разных местах
+   кода переключением класса .open — контроллер не трогает эту логику, а следит за классом:
+   переводит фокус внутрь, держит Tab в модалке, закрывает по Escape, блокирует прокрутку
+   фона и возвращает фокус туда, откуда модалку открыли. */
+(function(){
+  var FOCUSABLE='a[href],button:not([disabled]),input:not([disabled]):not([type=hidden]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+  var overlays=[].slice.call(document.querySelectorAll('.modal-overlay'));
+  var opener=null, uid=0;
+  function visible(el){return el.offsetParent!==null&&!el.closest('.hp-field');}
+  function focusables(o){return [].slice.call(o.querySelectorAll(FOCUSABLE)).filter(visible);}
+  function topOpen(){var open=overlays.filter(function(o){return o.classList.contains('open');});return open[open.length-1]||null;}
+  function link(o){
+    if(!o.getAttribute('aria-labelledby')){var t=o.querySelector('h2,h3');if(t){if(!t.id)t.id='mdl-title-'+(++uid);o.setAttribute('aria-labelledby',t.id);}}
+    if(!o.getAttribute('aria-describedby')){var d=o.querySelector('.modal-desc,.detail-desc');if(d){if(!d.id)d.id='mdl-desc-'+(++uid);o.setAttribute('aria-describedby',d.id);}}
+  }
+  function onOpen(o){
+    if(!opener){opener=document.activeElement;}
+    document.body.style.overflow='hidden';
+    setTimeout(function(){var f=focusables(o);var first=f.filter(function(x){return !x.classList.contains('modal-close');})[0]||f[0];if(first&&!o.contains(document.activeElement))first.focus();},30);
+  }
+  function onClose(){
+    if(topOpen())return;
+    document.body.style.overflow='';
+    if(opener&&document.contains(opener)&&typeof opener.focus==='function')opener.focus();
+    opener=null;
+  }
+  function close(o){var c=o.querySelector('.modal-close');if(c)c.click();else o.classList.remove('open');if(o.classList.contains('open'))o.classList.remove('open');}
+  overlays.forEach(function(o){
+    link(o);
+    var was=o.classList.contains('open');
+    new MutationObserver(function(){var now=o.classList.contains('open');if(now===was)return;was=now;now?onOpen(o):onClose();}).observe(o,{attributes:true,attributeFilter:['class']});
+  });
+  document.addEventListener('keydown',function(e){
+    var o=topOpen();if(!o)return;
+    if(e.key==='Escape'){e.preventDefault();close(o);return;}
+    if(e.key==='Tab'){var f=focusables(o);if(!f.length)return;var a=f[0],z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}
+      else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}
+      else if(!o.contains(document.activeElement)){e.preventDefault();a.focus();}}
+  });
+})();
+</script>
+<script>
+/* Заявки через форму Tilda (2026-10-04). На Tilda у самописных форм нет сервера, поэтому
+   заявки принимает штатная попап-форма Tilda: она шлёт их на почту, в Telegram и в «Заявки».
+   Кнопки сайта перед открытием попапа заполняют его скрытые поля — что за форма, какой корпус,
+   что посчитано в калькуляторе, UTM. Если попапа на странице нет (локальная копия, свой
+   хостинг) — функция возвращает false, и открывается прежняя форма сайта.
+   В Tilda: попап-блок с ссылкой #popup:lead и скрытыми полями source, object, calc, utm, page. */
+(function(){
+  var HOOK='#popup:lead';
+  function findPopup(){
+    return document.querySelector('[data-tooltip-hook="'+HOOK+'"]')
+        || document.querySelector('[data-popup-hook="'+HOOK+'"]');
+  }
+  function utmString(){
+    var p=new URLSearchParams(location.search),out=[];
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){if(p.get(k))out.push(k+'='+p.get(k));});
+    return out.join('; ');
+  }
+  window.storekmvTildaLead=function(fields){
+    var pop=findPopup();
+    if(!pop)return false;
+    var data={source:'',object:'',calc:'',utm:utmString(),page:location.pathname};
+    for(var k in fields){if(fields[k]!=null&&fields[k]!=='')data[k]=String(fields[k]);}
+    [].forEach.call(pop.querySelectorAll('form'),function(form){
+      for(var key in data){
+        var inp=form.querySelector('input[name="'+key+'"]');
+        if(!inp){inp=document.createElement('input');inp.type='hidden';inp.name=key;form.appendChild(inp);}
+        inp.value=data[key];
+      }
+    });
+    var a=document.createElement('a');a.href=HOOK;a.style.display='none';
+    document.body.appendChild(a);a.click();a.remove();
+    return true;
+  };
 })();
 </script>
 </body>

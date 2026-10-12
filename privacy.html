@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Политика конфиденциальности — StoreKMV</title>
 <meta name="description" content="Политика в отношении обработки персональных данных StoreKMV (ИП Лобанова Г. Г.), Георгиевск. Порядок обработки и защиты персональных данных пользователей сайта storekmv.ru.">
-<link rel="canonical" href="https://storekmv.ru/privacy.html">
+<link rel="canonical" href="https://storekmv.ru/privacy">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <style>
@@ -44,6 +44,18 @@ li{margin-bottom:8px}
 
 footer{background:var(--navy-dark);color:rgba(255,255,255,0.6);padding:40px 0;font-size:0.875rem}
 footer a{color:rgba(255,255,255,0.7)}
+
+/* Мобильная ширина без горизонтального скролла (ревью 2026-10-04).
+   Колонка 1fr не сжимается уже своего содержимого (это minmax(auto,1fr)), поэтому
+   длинный заголовок или широкая картинка распирали страницу; кнопки запрещали перенос. */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .stats-row,.hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .btn{white-space:normal;text-align:center}
+  .nav-right > .btn{display:none}
+}
 </style>
 </head>
 <body>

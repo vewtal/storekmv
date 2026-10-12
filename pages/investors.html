@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Инвесторам и партнёрам — StoreKMV | Площадка под партнёрский хаб, Built-to-suit, Ж/Д терминал</title>
-<meta name="description" content="StoreKMV — действующий производственно-складской комплекс в Георгиевске: площадка под партнёрский хаб от 200 м², Built-to-suit, расширение инженерных мощностей, инвестиционный Ж/Д погрузочный терминал. Территория 3,6 га.">
-<link rel="canonical" href="https://storekmv.ru/investors.html">
+<title>Инвесторам и партнёрам — StoreKMV | Площадка в Георгиевске под Built-to-suit</title>
+<meta name="description" content="Действующий производственно-складской комплекс 3,6 га в Георгиевске: площадка под партнёрский хаб, Built-to-suit, расширение инженерных мощностей, Ж/Д погрузочный узел под грузопоток.">
+<link rel="canonical" href="https://storekmv.ru/investors">
 <link rel="icon" type="image/svg+xml" href="../img/dark.svg">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <meta property="og:title" content="Инвесторам и партнёрам — StoreKMV">
-<meta property="og:description" content="Действующий комплекс 3,6 га: площадка под партнёрский хаб от 200 м², Built-to-suit, расширение мощностей и Ж/Д развитие.">
-<meta property="og:url" content="https://storekmv.ru/investors.html">
+<meta property="og:description" content="Действующий комплекс 3,6 га: площадка под партнёрский хаб, Built-to-suit, расширение мощностей и Ж/Д развитие.">
+<meta property="og:url" content="https://storekmv.ru/investors">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,6 +142,26 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   .footer-grid{grid-template-columns:1fr}
   .modal{padding:28px 20px}
 }
+
+/* Форма: согласие, ошибка, honeypot (как на главной) */
+.form-error{display:none;background:#FBE3E1;color:#B02A1E;padding:12px 14px;border-radius:4px;font-size:0.875rem;margin-top:12px}
+.form-error.show{display:block}
+.consent{display:flex;align-items:flex-start;gap:9px;margin:14px 0;font-size:0.8125rem;color:var(--muted);line-height:1.45;cursor:pointer}
+.consent input{width:auto;margin:2px 0 0;flex:0 0 auto}
+.consent a{color:var(--orange);text-decoration:underline}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* Мобильная ширина без горизонтального скролла (ревью 2026-10-04).
+   Колонка 1fr не сжимается уже своего содержимого (это minmax(auto,1fr)), поэтому
+   длинный заголовок или широкая картинка распирали страницу; кнопки запрещали перенос. */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .stats-row,.hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .btn{white-space:normal;text-align:center}
+  .nav-right > .btn{display:none}
+}
 </style>
 </head>
 <body>
@@ -184,8 +204,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 <section class="page-hero">
   <div class="container inner">
     <span class="section-label">Инвесторам и партнёрам</span>
-    <h1 class="h1">Действующий комплекс с <span>потенциалом модернизации</span></h1>
-    <p>Территория 3,6 га обладает высоким модернизационным потенциалом. Рассматриваем проекты долгосрочного расширения инженерных мощностей, строительства новых объектов под конкретные технические требования (Built-to-suit), а также инвестиционное создание железнодорожного погрузочного терминала под подтверждённый стабильный грузопоток.</p>
+    <h1 class="h1">Площадка light industrial <span>в регионе, где этого формата нет</span></h1>
+    <p>В СКФО 267 тыс. м² качественных складов на 10 миллионов человек, а сегмент light industrial — небольшие производственные блоки с офисом и инженерией — не сформирован как рынок. StoreKMV — действующий комплекс 3,6 га с корпусами, котельной, охраной и Ж/Д путём, готовый развиваться в эту сторону: часть корпусов уже подходит под производство, часть территории свободна под строительство.</p>
     <button class="btn btn-primary btn-lg" data-modal>Запросить инвестиционный пакет</button>
   </div>
 </section>
@@ -198,10 +218,10 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     <div class="investors-grid">
       <div class="inv-stat"><div class="inv-stat-num">3,6 га</div><div class="inv-stat-lbl">Территория комплекса с резервом под развитие</div></div>
       <div class="inv-stat"><div class="inv-stat-num">11 741 м²</div><div class="inv-stat-lbl">Существующие складские корпуса (7 объектов)</div></div>
-      <div class="inv-stat"><div class="inv-stat-num">100–150 кВт</div><div class="inv-stat-lbl">Текущая мощность, расширение по ТУ</div></div>
-      <div class="inv-stat"><div class="inv-stat-num">1825,5 м²</div><div class="inv-stat-lbl">Админздание 155/8 (3 этажа) с потенциалом доп. загрузки</div></div>
+      <div class="inv-stat"><div class="inv-stat-num">150 кВт</div><div class="inv-stat-lbl">Подстанция, с возможностью расширения по техническим условиям</div></div>
+      <div class="inv-stat"><div class="inv-stat-num">1 800 м²</div><div class="inv-stat-lbl">Админздание 155/8 (3 этажа) с потенциалом доп. загрузки</div></div>
       <div class="inv-stat"><div class="inv-stat-num">Ж/Д ветка</div><div class="inv-stat-lbl">Проходит вдоль складов — основа отдельного инфраструктурного проекта</div></div>
-      <div class="inv-stat"><div class="inv-stat-num">с 2003 г.</div><div class="inv-stat-lbl">Действующая эксплуатация и обслуживание инженерных систем</div></div>
+      <div class="inv-stat"><div class="inv-stat-num">Газ · вода · оптика</div><div class="inv-stat-lbl">Подведённые коммуникации: газовая котельная, водоснабжение, оптоволоконный интернет</div></div>
     </div>
   </div>
 </section>
@@ -209,13 +229,13 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 <section class="section" id="wb-hub">
   <div class="container">
     <span class="section-label">Партнёрский хаб RWB</span>
-    <h2>Площадка соответствует требованиям программы партнёрских хабов</h2>
-    <p class="lead">Программа RWB рассчитана на помещения от 200 м² с зонами хранения, подъездом для грузового транспорта и видеонаблюдением, а после одобрения заявки отводит 30 дней на запуск склада. StoreKMV закрывает эти требования действующей инфраструктурой: корпуса в эксплуатации, инженерные системы обслуживаются, договор оформляется напрямую от собственника.</p>
+    <h2>Что площадка даёт под партнёрский хаб</h2>
+    <p class="lead">Программа RWB рассчитана на помещения с зонами хранения, подъездом для грузового транспорта и видеонаблюдением, а после одобрения заявки отводит 30 дней на запуск склада. Корпуса StoreKMV в эксплуатации, инженерные системы обслуживаются, договор оформляется напрямую от собственника — 30 дней уходят на оснащение, а не на стройку.</p>
     <div class="scenario-grid">
       <div class="scenario-card">
         <div class="scenario-num">01</div>
         <h3>Площадь под заявленный формат</h3>
-        <p>Семь корпусов от 630 до 3 560 м². Блок нарезается под объём, который партнёр заявляет в программу, — от 200 м², с возможностью расширения внутри комплекса без смены адреса склада.</p>
+        <p>Семь корпусов от 630 до 3 560 м². Подберём блок под объём, который партнёр заявляет в программу, и расширим его внутри комплекса без смены адреса склада.</p>
       </div>
       <div class="scenario-card">
         <div class="scenario-num">02</div>
@@ -235,16 +255,13 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <div class="scenario-card">
         <div class="scenario-num">05</div>
         <h3>Охрана и контроль доступа</h3>
-        <p>Закрытая территория 3,6 га: КПП, видеонаблюдение, охрана 24/7, пожарные водоёмы закрытого типа. Требование программы по видеонаблюдению закрыто действующей системой.</p>
+        <p>Закрытая территория 3,6 га: КПП, охрана 24/7, видеонаблюдение по периметру, пожарные водоёмы закрытого типа. Программа требует отдельное видеонаблюдение внутри склада — дооснастим выбранный корпус до запуска, в срок программы это укладывается.</p>
       </div>
       <div class="scenario-card">
         <div class="scenario-num">06</div>
-        <h3>Энергетика и рабочие места</h3>
-        <p>Действующая электрическая мощность 100 кВт с увеличением по техническим условиям. Офисные помещения при складах — под операторов, терминалы сбора данных и учётную систему.</p>
+        <h3>Офисы для команды хаба</h3>
+        <p>Часть складских корпусов уже с офисами внутри, в остальных выделим рабочую зону под операторов и учётную систему. В административном здании 155/8 — отдельные офисные помещения разной площади.</p>
       </div>
-    </div>
-    <div class="note-panel">
-      <p><b>Об условиях участия:</b> ставки вознаграждения и полный перечень технических требований оператор публично не раскрывает — они уточняются при подаче заявки. StoreKMV предоставляет помещение, инфраструктуру и документы на объект; решение по заявке и условия участия определяет RWB. Компания не является представителем Wildberries или RWB.</p>
     </div>
     <button class="btn btn-primary btn-lg" data-modal style="margin-top:32px">Обсудить размещение хаба</button>
   </div>
@@ -264,7 +281,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <div class="scenario-card">
         <div class="scenario-num">02</div>
         <h3>Расширение мощностей</h3>
-        <p>Долгосрочное увеличение инженерных мощностей (электроснабжение свыше 150 кВт по ТУ, инженерные сети) под масштаб арендатора.</p>
+        <p>Долгосрочное увеличение инженерных мощностей под масштаб арендатора: электроснабжение сверх действующих 150 кВт по техническим условиям, инженерные сети.</p>
       </div>
       <div class="scenario-card">
         <div class="scenario-num">03</div>
@@ -273,7 +290,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       </div>
     </div>
     <div class="note-panel">
-      <p><b>По железной дороге:</b> на текущем этапе StoreKMV не оказывает услугу Ж/Д погрузки/разгрузки. Путь проходит вдоль складских корпусов; для запуска потребуется проектирование и строительство отдельного крана или погрузочного узла — это имеет смысл при наличии инвестора либо долгосрочного арендатора с подтверждённым грузопотоком.</p>
+      <p><b>По железной дороге:</b> на текущем этапе StoreKMV не оказывает услугу Ж/Д погрузки/разгрузки. Путь проходит вдоль складских корпусов; возможно проектирование и строительство отдельного погрузочного узла при подтверждённом грузопотоке.</p>
     </div>
   </div>
 </section>
@@ -285,7 +302,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
         <div class="footer-logo">
           <img src="../img/logo-dark.svg" alt="StoreKMV — складской индустриальный кластер" width="268" height="38" style="display:block;height:38px;width:auto">
         </div>
-        <p class="footer-desc">Производственно-складской кластер в Георгиевске. Склады, ответственное хранение, производственные блоки и офисная инфраструктура на одной охраняемой территории.</p>
+        <p class="footer-desc">Производственно-складская площадка в Георгиевске: склады трёх температурных режимов, блоки под производство, ответственное хранение, сезонное агрохранение и офисная инфраструктура на закрытой территории 3,6 га.</p>
       </div>
       <div class="footer-col">
         <h4>Направления</h4>
@@ -336,9 +353,12 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <div class="form-field"><label for="fphone">Телефон *</label><input id="fphone" name="fphone" type="tel" required></div>
       <div class="form-field"><label for="femail">Email</label><input id="femail" name="femail" type="email"></div>
       <div class="form-field"><label for="fcomment">Интересующий сценарий / комментарий</label><textarea id="fcomment" name="fcomment" rows="3"></textarea></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Отправить запрос</button>
-      <p class="modal-note">Оставляя заявку, вы разрешаете связаться с вами для ответа по обращению.</p>
+      
+      <div class="hp-field" aria-hidden="true"><label for="fwebsite">Оставьте это поле пустым</label><input id="fwebsite" name="fwebsite" type="text" tabindex="-1" autocomplete="off"></div>
+      <label class="consent"><input type="checkbox" id="fconsent" name="fconsent" required> Я согласен на обработку персональных данных и ознакомлен с <a href="../privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>
+      <button type="submit" id="leadSubmit" class="btn btn-primary" style="width:100%;justify-content:center">Отправить запрос</button>
       <div class="form-success" id="formSuccess">Спасибо! Мы свяжемся с вами в течение рабочего дня.</div>
+      <p class="form-error" id="formError" role="alert"></p>
     </form>
   </div>
 </div>
@@ -358,22 +378,145 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 
   // Модалка заявки
   const leadOverlay=document.getElementById('leadOverlay');
-  function openLead(){document.getElementById('formSuccess').classList.remove('show');leadOverlay.classList.add('open');}
+  function openLead(e){
+    const label=e&&e.currentTarget?e.currentTarget.textContent.trim():'Инвесторам';
+    if(window.storekmvTildaLead&&window.storekmvTildaLead({source:'Инвесторам: '+label}))return;
+    document.getElementById('formSuccess').classList.remove('show');leadOverlay.classList.add('open');
+  }
   function closeLead(){leadOverlay.classList.remove('open');}
   document.querySelectorAll('[data-modal]').forEach(b=>b.addEventListener('click',openLead));
   document.getElementById('leadClose').addEventListener('click',closeLead);
   leadOverlay.addEventListener('click',e=>{if(e.target===leadOverlay)closeLead();});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLead();});
 
-  // Отправка формы (stub — подключить backend на Tilda)
-  document.getElementById('leadForm').addEventListener('submit',e=>{
+  // Отправка формы: тот же эндпоинт, что на главной. На Tilda адрес функции задаётся
+  // window.STOREKMV_LEAD_ENDPOINT (вставляет build-tilda.py), на своём хостинге — /api/lead.
+  // Сообщение об успехе — только после ответа сервера, иначе заявка теряется молча.
+  const FORM_ENDPOINT=window.STOREKMV_LEAD_ENDPOINT||'/api/lead';
+  function collectUTM(){
+    const p=new URLSearchParams(location.search),o={};
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k=>{if(p.get(k))o[k]=p.get(k);});
+    return o;
+  }
+  const leadFormEl=document.getElementById('leadForm');
+  leadFormEl.addEventListener('submit',async e=>{
     e.preventDefault();
+    const errEl=document.getElementById('formError');
+    const okEl=document.getElementById('formSuccess');
+    okEl.classList.remove('show');errEl.classList.remove('show');
+    const showErr=m=>{errEl.textContent=m;errEl.classList.add('show');};
     const name=document.getElementById('fname').value.trim();
     const phone=document.getElementById('fphone').value.trim();
-    if(!name||!phone){(!name?document.getElementById('fname'):document.getElementById('fphone')).focus();return;}
-    document.getElementById('formSuccess').classList.add('show');
-    e.target.reset();
+    if(!name){document.getElementById('fname').focus();return showErr('Укажите имя.');}
+    if(!phone){document.getElementById('fphone').focus();return showErr('Укажите телефон.');}
+    if(!document.getElementById('fconsent').checked){return showErr('Необходимо согласие на обработку персональных данных.');}
+    if(document.getElementById('fwebsite').value){return;} // honeypot: тихо игнорируем ботов
+    const payload={
+      source:'investors',
+      sourceTitle:(document.getElementById('leadTitle')||{textContent:''}).textContent,
+      name:name,
+      company:(document.getElementById('fcompany')||{value:''}).value.trim(),
+      phone:phone,
+      comment:(document.getElementById('fcomment')||{value:''}).value.trim(),
+      email:(document.getElementById('femail')||{value:''}).value.trim(),
+      utm:collectUTM(),
+      consent:true,
+      page:location.href,
+      ts:new Date().toISOString()
+    };
+    const btn=document.getElementById('leadSubmit');
+    const orig=btn.textContent;btn.disabled=true;btn.textContent='Отправляем…';
+    try{
+      const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      if(!r.ok)throw new Error('status '+r.status);
+      okEl.classList.add('show');
+      leadFormEl.reset();
+      if(window.ym&&window.YM_ID)ym(window.YM_ID,'reachGoal','lead_submit');
+    }catch(ex){
+      showErr('Не удалось отправить заявку. Позвоните нам: +7 928-630-63-44 или напишите на i@vllobanov.ru');
+    }finally{
+      btn.disabled=false;btn.textContent=orig;
+    }
   });
+})();
+</script>
+<script>
+/* Доступность модалок (ревью 2026-10-04). Модалки открываются и закрываются в разных местах
+   кода переключением класса .open — контроллер не трогает эту логику, а следит за классом:
+   переводит фокус внутрь, держит Tab в модалке, закрывает по Escape, блокирует прокрутку
+   фона и возвращает фокус туда, откуда модалку открыли. */
+(function(){
+  var FOCUSABLE='a[href],button:not([disabled]),input:not([disabled]):not([type=hidden]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+  var overlays=[].slice.call(document.querySelectorAll('.modal-overlay'));
+  var opener=null, uid=0;
+  function visible(el){return el.offsetParent!==null&&!el.closest('.hp-field');}
+  function focusables(o){return [].slice.call(o.querySelectorAll(FOCUSABLE)).filter(visible);}
+  function topOpen(){var open=overlays.filter(function(o){return o.classList.contains('open');});return open[open.length-1]||null;}
+  function link(o){
+    if(!o.getAttribute('aria-labelledby')){var t=o.querySelector('h2,h3');if(t){if(!t.id)t.id='mdl-title-'+(++uid);o.setAttribute('aria-labelledby',t.id);}}
+    if(!o.getAttribute('aria-describedby')){var d=o.querySelector('.modal-desc,.detail-desc');if(d){if(!d.id)d.id='mdl-desc-'+(++uid);o.setAttribute('aria-describedby',d.id);}}
+  }
+  function onOpen(o){
+    if(!opener){opener=document.activeElement;}
+    document.body.style.overflow='hidden';
+    setTimeout(function(){var f=focusables(o);var first=f.filter(function(x){return !x.classList.contains('modal-close');})[0]||f[0];if(first&&!o.contains(document.activeElement))first.focus();},30);
+  }
+  function onClose(){
+    if(topOpen())return;
+    document.body.style.overflow='';
+    if(opener&&document.contains(opener)&&typeof opener.focus==='function')opener.focus();
+    opener=null;
+  }
+  function close(o){var c=o.querySelector('.modal-close');if(c)c.click();else o.classList.remove('open');if(o.classList.contains('open'))o.classList.remove('open');}
+  overlays.forEach(function(o){
+    link(o);
+    var was=o.classList.contains('open');
+    new MutationObserver(function(){var now=o.classList.contains('open');if(now===was)return;was=now;now?onOpen(o):onClose();}).observe(o,{attributes:true,attributeFilter:['class']});
+  });
+  document.addEventListener('keydown',function(e){
+    var o=topOpen();if(!o)return;
+    if(e.key==='Escape'){e.preventDefault();close(o);return;}
+    if(e.key==='Tab'){var f=focusables(o);if(!f.length)return;var a=f[0],z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}
+      else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}
+      else if(!o.contains(document.activeElement)){e.preventDefault();a.focus();}}
+  });
+})();
+</script>
+<script>
+/* Заявки через форму Tilda (2026-10-04). На Tilda у самописных форм нет сервера, поэтому
+   заявки принимает штатная попап-форма Tilda: она шлёт их на почту, в Telegram и в «Заявки».
+   Кнопки сайта перед открытием попапа заполняют его скрытые поля — что за форма, какой корпус,
+   что посчитано в калькуляторе, UTM. Если попапа на странице нет (локальная копия, свой
+   хостинг) — функция возвращает false, и открывается прежняя форма сайта.
+   В Tilda: попап-блок с ссылкой #popup:lead и скрытыми полями source, object, calc, utm, page. */
+(function(){
+  var HOOK='#popup:lead';
+  function findPopup(){
+    return document.querySelector('[data-tooltip-hook="'+HOOK+'"]')
+        || document.querySelector('[data-popup-hook="'+HOOK+'"]');
+  }
+  function utmString(){
+    var p=new URLSearchParams(location.search),out=[];
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){if(p.get(k))out.push(k+'='+p.get(k));});
+    return out.join('; ');
+  }
+  window.storekmvTildaLead=function(fields){
+    var pop=findPopup();
+    if(!pop)return false;
+    var data={source:'',object:'',calc:'',utm:utmString(),page:location.pathname};
+    for(var k in fields){if(fields[k]!=null&&fields[k]!=='')data[k]=String(fields[k]);}
+    [].forEach.call(pop.querySelectorAll('form'),function(form){
+      for(var key in data){
+        var inp=form.querySelector('input[name="'+key+'"]');
+        if(!inp){inp=document.createElement('input');inp.type='hidden';inp.name=key;form.appendChild(inp);}
+        inp.value=data[key];
+      }
+    });
+    var a=document.createElement('a');a.href=HOOK;a.style.display='none';
+    document.body.appendChild(a);a.click();a.remove();
+    return true;
+  };
 })();
 </script>
 </body>

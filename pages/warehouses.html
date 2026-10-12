@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Каталог складов в Георгиевске — StoreKMV | 7 корпусов от 300 до 3 560 м²</title>
-<meta name="description" content="Каталог складских помещений StoreKMV в Георгиевске: 7 корпусов от 300 до 3 560 м². Сухие, тёплые и охлаждаемые блоки. Условия и срок предоставления согласуются по запросу. Аренда от собственника.">
-<link rel="canonical" href="https://storekmv.ru/warehouses.html">
+<meta name="description" content="Каталог складов StoreKMV в Георгиевске: 7 корпусов от 300 до 3 560 м², неотапливаемые, отапливаемые и охлаждаемые блоки. Аренда напрямую от собственника.">
+<link rel="canonical" href="https://storekmv.ru/warehouses">
 <link rel="icon" type="image/svg+xml" href="../img/dark.svg">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <meta property="og:title" content="Каталог складов — StoreKMV, Георгиевск">
-<meta property="og:description" content="7 корпусов от 300 до 3 560 м²: сухие, тёплые и охлаждаемые. Аренда от собственника.">
-<meta property="og:url" content="https://storekmv.ru/warehouses.html">
+<meta property="og:description" content="7 корпусов от 300 до 3 560 м²: неотапливаемые, отапливаемые и охлаждаемые. Аренда от собственника.">
+<meta property="og:url" content="https://storekmv.ru/warehouses">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ru_RU">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -156,6 +156,42 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   .modal{padding:28px 20px}
   .object-actions{flex-direction:column}
 }
+
+/* Паспорт объекта */
+.spec-group{margin-bottom:22px}
+.spec-group:last-child{margin-bottom:0}
+.spec-group h4{font-size:0.8125rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--orange);margin-bottom:10px;font-weight:700}
+.spec-row{display:grid;grid-template-columns:minmax(140px,38%) 1fr;gap:10px 16px;padding:7px 0;border-bottom:1px solid rgba(9,22,41,0.07);font-size:0.9375rem;align-items:baseline}
+.spec-row:last-child{border-bottom:0}
+.spec-row dt{color:var(--muted)}
+.spec-row dd{color:var(--navy);font-weight:600;margin:0}
+.modal--spec{max-width:680px}
+.spec-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.spec-note{font-size:0.8125rem;color:var(--muted);margin-top:22px;padding-top:16px;border-top:1px solid rgba(9,22,41,0.1)}
+@media(max-width:600px){.spec-row{grid-template-columns:1fr;gap:2px;padding:9px 0}}
+
+/* Форма: согласие, ошибка, honeypot (как на главной) */
+.form-error{display:none;background:#FBE3E1;color:#B02A1E;padding:12px 14px;border-radius:4px;font-size:0.875rem;margin-top:12px}
+.form-error.show{display:block}
+.consent{display:flex;align-items:flex-start;gap:9px;margin:14px 0;font-size:0.8125rem;color:var(--muted);line-height:1.45;cursor:pointer}
+.consent input{width:auto;margin:2px 0 0;flex:0 0 auto}
+.consent a{color:var(--orange);text-decoration:underline}
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* Мобильная ширина без горизонтального скролла (ревью 2026-10-04).
+   Колонка 1fr не сжимается уже своего содержимого (это minmax(auto,1fr)), поэтому
+   длинный заголовок или широкая картинка распирали страницу; кнопки запрещали перенос. */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .stats-row,.hero-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .btn{white-space:normal;text-align:center}
+  .nav-right > .btn{display:none}
+}
+
+/* подпись ставки блоком (2026-10-11) */
+.price-note{font-size:0.8125rem;color:var(--muted);margin-top:-6px;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -200,7 +236,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     <div class="breadcrumb"><a href="../index.html">Главная</a> <span>/</span> <span>Каталог складов</span></div>
     <span class="section-label">Объекты комплекса</span>
     <h1 class="h1">Каталог складов — <span>7 корпусов</span> от 300 до 3 560 м²</h1>
-    <p>Сухие, тёплые и охлаждаемые корпуса на закрытой территории 3,6 га в Георгиевске. Аренда блоком от 300 м² или целым корпусом. Условия и срок предоставления согласуются по запросу.</p>
+    <p>Неотапливаемые, отапливаемые и охлаждаемые корпуса на закрытой территории 3,6 га в Георгиевске. Аренда блоком от 300 м² или целым корпусом. Условия и срок предоставления согласуются по запросу.</p>
   </div>
 </section>
 
@@ -208,8 +244,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   <div class="container">
     <div class="filters" id="filters">
       <button class="filter-btn active" data-filter="all">Все объекты</button>
-      <button class="filter-btn" data-filter="cold">Без отопления</button>
-      <button class="filter-btn" data-filter="warm">Тёплые</button>
+      <button class="filter-btn" data-filter="cold">Неотапливаемые</button>
+      <button class="filter-btn" data-filter="warm">Отапливаемые</button>
       <button class="filter-btn" data-filter="cool">Охлаждаемые</button>
     </div>
     <div class="warehouse-grid" id="grid"></div>
@@ -224,7 +260,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
         <div class="footer-logo">
           <img src="../img/logo-dark.svg" alt="StoreKMV — складской индустриальный кластер" width="268" height="38" style="display:block;height:38px;width:auto">
         </div>
-        <p class="footer-desc">Производственно-складской кластер в Георгиевске. Склады, ответственное хранение, производственные блоки и офисная инфраструктура на одной охраняемой территории.</p>
+        <p class="footer-desc">Производственно-складская площадка в Георгиевске: склады трёх температурных режимов, блоки под производство, ответственное хранение, сезонное агрохранение и офисная инфраструктура на закрытой территории 3,6 га.</p>
       </div>
       <div class="footer-col">
         <h4>Направления</h4>
@@ -239,8 +275,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <div class="footer-col">
         <h4>Объекты</h4>
         <ul>
-          <li><a href="#" data-filter-link="cold">Без отопления</a></li>
-          <li><a href="#" data-filter-link="warm">Тёплые</a></li>
+          <li><a href="#" data-filter-link="cold">Неотапливаемые</a></li>
+          <li><a href="#" data-filter-link="warm">Отапливаемые</a></li>
           <li><a href="#" data-filter-link="cool">Охлаждаемые</a></li>
         </ul>
       </div>
@@ -264,6 +300,22 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 </footer>
 
 <!-- Модалка заявки -->
+<div class="modal-overlay" id="specOverlay" role="dialog" aria-modal="true" aria-labelledby="specTitle">
+  <div class="modal modal--spec">
+    <button class="modal-close" id="specClose" aria-label="Закрыть">&times;</button>
+    <div class="spec-head"><h3 id="specTitle">Паспорт объекта</h3></div>
+    <p class="modal-desc" id="specSub"></p>
+    <div id="specBody"></div>
+    <div class="spec-note">
+      <b>Территория комплекса (общая для всех корпусов):</b> закрытая территория 3,6 га, КПП и пропускная система на всей территории,
+      охрана круглосуточно, видеонаблюдение по территории, системы пожаротушения в складах, пожарные водоёмы закрытого типа, твёрдое покрытие и
+      маневрирование для фур, приём до 10 автофургонов в час, прямой выезд на Р-217 «Кавказ». Режим работы комплекса: Пн–Пт 8:00–17:00.<br><br>
+      Видеонаблюдение внутри помещения, интернет, дополнительную электрическую мощность и отопление подводим под
+      задачу арендатора — состав и сроки согласуем до договора.
+    </div>
+  </div>
+</div>
+
 <div class="modal-overlay" id="leadOverlay" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
   <div class="modal">
     <button class="modal-close" id="leadClose" aria-label="Закрыть">×</button>
@@ -278,9 +330,12 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <div class="form-field"><label for="fcompany">Компания</label><input id="fcompany" name="fcompany" type="text"></div>
       <div class="form-field"><label for="fphone">Телефон *</label><input id="fphone" name="fphone" type="tel" required></div>
       <div class="form-field"><label for="fcomment">Площадь / комментарий</label><textarea id="fcomment" name="fcomment" rows="3"></textarea></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Отправить заявку</button>
-      <p class="modal-note">Оставляя заявку, вы разрешаете связаться с вами для ответа по обращению.</p>
+      
+      <div class="hp-field" aria-hidden="true"><label for="fwebsite">Оставьте это поле пустым</label><input id="fwebsite" name="fwebsite" type="text" tabindex="-1" autocomplete="off"></div>
+      <label class="consent"><input type="checkbox" id="fconsent" name="fconsent" required> Я согласен на обработку персональных данных и ознакомлен с <a href="../privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>
+      <button type="submit" id="leadSubmit" class="btn btn-primary" style="width:100%;justify-content:center">Отправить заявку</button>
       <div class="form-success" id="formSuccess">Спасибо! Мы свяжемся с вами в течение рабочего дня.</div>
+      <p class="form-error" id="formError" role="alert"></p>
     </form>
   </div>
 </div>
@@ -289,34 +344,93 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 (function(){
   // ===== Данные 7 объектов (единый источник — docs/commercial-matrix.md) =====
   const objects=[
-    {id:'155-9',cat:'cold',name:'Склад 155/9',badge:'Без отопления +5…+20°C',
-      desc:'Отдельный компактный корпус со своей парковкой и зоной погрузки. Идеален для локального распределительного центра или оптовой базы.',
-      area:'630 м²',min:'от 300 м²',height:'6 м',extra:'Антипыль',price:'от 230 ₽/м²',
-      tags:['Компактный','Антипыль','Своя парковка']},
-    {id:'lit-p',cat:'cold',name:'Склад 155 Лит.П',badge:'Сухой +5…+25°C',
-      desc:'Две изолированные секции с кран-балкой, погрузочным пандусом и внутренними офисами. Ж/Д путь проходит вплотную к корпусу — готовы спроектировать рампу под якорного арендатора.',
-      area:'1 536 м²',min:'768 м² (секция)',height:'6 м',extra:'Кран-балка',price:'от 200 ₽/м²',
-      tags:['Кран-балка','Офис внутри','Пандус','Навес']},
-    {id:'155-6-a',cat:'cold',name:'Склад 155/6 Лит.А',badge:'Без отопления +5…+25°C',
-      desc:'Классический сухой неотапливаемый склад повышенной вместимости с пандусом. Подходит для крупногабаритного паллетного хранения, упаковки и сырья.',
-      area:'2 170 м²',min:'от 1 000 м²',height:'4,8 м',extra:'Пандус',price:'от 200 ₽/м²',
-      tags:['Паллетное хранение','Зонирование','Подсобное']},
-    {id:'155-6-b',cat:'cold',name:'Склад 155/6 Лит.Б',badge:'Без отопления +5…+25°C',
-      desc:'Самый большой корпус комплекса с гибким зонированием под масштабные производственные или логистические задачи. Асфальтированный пол под высокие нагрузки.',
-      area:'3 560 м²',min:'от 1 400 м²',height:'3–4,8 м',extra:'2 секции',price:'от 200 ₽/м²',
-      tags:['Флагман','Зонирование','Дистрибуция']},
-    {id:'155-4-b',cat:'warm',name:'Склад 155/4 Лит.Б',badge:'Тёплый +17…+20°C',
-      desc:'Капитальный отапливаемый корпус с собственной газовой котельной и принудительной вентиляцией. Защитит чувствительную продукцию от зимних перепадов.',
-      area:'1 045 м²',min:'1 045 м² (целиком)',height:'4,8 м',extra:'Газовая котельная',price:'от 200 ₽/м²',
-      tags:['Газовая котельная','Вентиляция','Офис']},
-    {id:'155-4-v',cat:'warm',name:'Склад 155/4 Лит.В',badge:'Тёплый +15…+20°C',
-      desc:'Тёплый универсальный склад с полами «антипыль» и широким погрузочным навесом, защищающим товар от осадков при интенсивном кросс-докинге.',
-      area:'2 340 м²',min:'от 1 000 м²',height:'4,8 м',extra:'Газ + навес',price:'от 200 ₽/м²',
-      tags:['Тёплый','Навес','Антипыль','Офис']},
-    {id:'p2',cat:'cool',name:'Склад П2 (охлаждаемый)',badge:'Охлаждаемый ~+15°C',
-      desc:'Охлаждаемый склад со стабильной температурой около +15 °C. Оптимально для кондитерских изделий, деликатных товаров, фармацевтики или овощехранилища.',
-      area:'460 м²',min:'460 м² (целиком)',height:'4,8 м',extra:'Кондиционеры',price:'от 400 ₽/м²',
-      tags:['Охлаждаемый','Антипыль','Овощехранилище']}
+    {id:'155-9',block:true,power:'10 кВт',heat:'Нет, можно подвести',cat:'cold',name:'Склад 155/9',badge:'Неотапливаемый',temp:'+5…+20 °C',
+      desc:'Отдельно стоящий корпус на 630 м² с собственной парковкой и зоной погрузки: соседей по зданию нет, режим работы вы задаёте сами. Высота 6 метров, полы «антипыль», выделенная мощность 10 кВт. Минимальный блок 300 м² — самый низкий порог входа в комплексе. Берут под локальный товарный запас, сырьё, сезонное хранение сельхозпродукции и комплектацию заказов.',
+      area:'630 м²',min:'от 300 м²',height:'6 м',price:'от 230 ₽/м²',
+      tags:['Обеспыленный пол','Своя парковка','Высота 6 м'],
+      spec:[
+        ['Помещение',[['Общая площадь','630 м²'],['Минимальный блок','от 300 м²'],['Высота потолков','6 м'],['Пол','обеспыленный, «антипыль»'],['Стены','энергоэффективные'],['Освещение','дежурное; рабочее оснастим под задачу']]],
+        ['Климат',[['Температурный режим','+5…+20 °C'],['Отопление','нет; можно подвести газ от действующей котельной или поставить дизельную станцию за корпусом']]],
+        ['Погрузка',[['Зона погрузки','на уровне земли, отдельного дока нет'],['Навес','нет'],['Ворота','не менее 4 × 3 м'],['Парковка','собственная, у корпуса']]],
+        ['Инженерия',[['Электрическая мощность','10 кВт'],['Интернет','проводной по запросу'],['Вода','внутри нет; наружная на территории'],['Канализация','нет, только в административном здании 155/8']]],
+        ['Безопасность',[['Видеонаблюдение внутри','требуется дооснащение']]],
+        ['Назначение',[['Подходит под','стеллажное хранение, небольшое производство, сортировку, упаковку и комплектацию заказов']]]
+      ]},
+    {id:'lit-p',block:true,power:'30 кВт',heat:'Нет, можно подвести',cat:'cold',name:'Склад 155 Лит.П',badge:'Неотапливаемый',temp:'+5…+25 °C',
+      desc:'Две изолированные секции по 768 м² с кран-балкой, навесом и пандусом высотой 1 м под разгрузку фуры — он общий с соседним П2; в каждой секции свой офис, напротив корпуса — офис с санузлом, душем и кухней. Высота 6 метров и кран-балка закрывают вопрос техники при работе с тяжёлым и длинномерным грузом. Секции сдаются по отдельности: минимальный блок — ровно одна секция.',
+      area:'1 536 м²',min:'768 м² (секция)',height:'6 м',price:'от 200 ₽/м²',
+      tags:['Кран-балка','Офис и бытовые','Высота 6 м','2 секции'],
+      spec:[
+        ['Помещение',[['Общая площадь','1 536 м²'],['Секции','2 по 768 м², изолированные'],['Минимальный блок','768 м² (одна секция)'],['Высота потолков','6 м'],['Пол','асфальт, нагрузка до 5 т'],['Освещение','есть']]],
+        ['Климат',[['Температурный режим','+5…+25 °C'],['Отопление','нет; подведение газового отопления возможно, для комплекса это быстро и недорого']]],
+        ['Погрузка',[['Зона погрузки','пандус высотой 1 м — под разгрузку фуры, общий с П2'],['Навес','есть, глубина не менее 2 м'],['Ворота','не менее 4 × 3 м'],['Грузоподъёмное оборудование','кран-балка']]],
+        ['Инженерия',[['Электрическая мощность','30 кВт'],['Интернет','Wi-Fi; проводной оптический по запросу'],['Вода','внутри нет; наружная на территории'],['Канализация','нет, только в административном здании 155/8']]],
+        ['Офис и бытовые',[['Офис','в каждой секции'],['Отдельный офис напротив корпуса','санузел, душ, кухня']]],
+        ['Безопасность',[['Видеонаблюдение внутри','требуется дооснащение']]],
+        ['Назначение',[['Подходит под','лёгкое производство, работу с тяжёлым и длинномерным грузом, подготовку поставок для маркетплейсов, сезонное хранение зерна']]]
+      ]},
+    {id:'155-6-a',block:true,power:'20 кВт',heat:'Нет',cat:'cold',name:'Склад 155/6 Лит.А',badge:'Неотапливаемый',temp:'+5…+25 °C',
+      desc:'Большой неотапливаемый блок под паллетное хранение: 2 170 м², высота 4,8 м, пандус высотой 1 м для разгрузки фуры. Асфальтовый пол рассчитан на нагрузку 5 т/м², поэтому корпус держит тяжёлые паллеты и штабелирование. Есть подсобное помещение и возможность зонирования под несколько операций.',
+      area:'2 170 м²',min:'от 1 000 м²',height:'4,8 м',price:'от 180 ₽/м²',
+      tags:['Пол 5 т/м²','Пандус','Зонирование'],
+      spec:[
+        ['Помещение',[['Общая площадь','2 170 м²'],['Минимальный блок','от 1 000 м²'],['Высота потолков','4,8 м'],['Пол','асфальт, нагрузка 5 т/м²'],['Зонирование','возможно'],['Подсобное помещение','есть'],['Освещение','есть']]],
+        ['Климат',[['Температурный режим','+5…+25 °C'],['Отопление','нет']]],
+        ['Погрузка',[['Зона погрузки','пандус высотой 1 м — под разгрузку фуры'],['Навес','есть, глубина не менее 2 м'],['Ворота','не менее 4 × 3 м']]],
+        ['Инженерия',[['Электрическая мощность','20 кВт'],['Интернет','проводной по запросу'],['Вода','внутри нет; наружная на территории'],['Канализация','нет, только в административном здании 155/8']]],
+        ['Безопасность',[['Видеонаблюдение внутри','требуется дооснащение']]],
+        ['Назначение',[['Подходит под','паллетное хранение, оптовый запас, крупногабаритный груз, сезонные партии']]]
+      ]},
+    {id:'155-6-b',block:true,power:'20 кВт',heat:'Нет',cat:'cold',name:'Склад 155/6 Лит.Б',badge:'Неотапливаемый',temp:'+5…+25 °C',
+      desc:'Самый большой корпус комплекса: 3 560 м² в двух секциях, высота от 3 до 4,8 м. Хватает, чтобы развести хранение, отгрузку и подсортировку по разным зонам одной площадки, не арендуя второй склад. Границы блоков и перегородки обсуждаем до подписания договора.',
+      area:'3 560 м²',min:'от 1 400 м²',height:'3–4,8 м',price:'от 180 ₽/м²',
+      tags:['Самый большой','2 секции','Зонирование'],
+      spec:[
+        ['Помещение',[['Общая площадь','3 560 м²'],['Секции','2'],['Минимальный блок','от 1 400 м²'],['Высота потолков','3–4,8 м'],['Пол','асфальт, нагрузка до 5 т'],['Зонирование','возможно, границы блоков согласуем до договора'],['Освещение','есть']]],
+        ['Климат',[['Температурный режим','+5…+25 °C'],['Отопление','нет']]],
+        ['Погрузка',[['Зона погрузки','на уровне земли, отдельного дока нет'],['Навес','есть, глубина не менее 2 м'],['Ворота','не менее 4 × 3 м']]],
+        ['Инженерия',[['Электрическая мощность','20 кВт'],['Интернет','проводной по запросу'],['Вода','внутри нет; наружная на территории'],['Канализация','нет, только в административном здании 155/8']]],
+        ['Безопасность',[['Видеонаблюдение внутри','требуется дооснащение']]],
+        ['Назначение',[['Подходит под','крупный товарный запас, дистрибуцию, разделение на функциональные зоны']]]
+      ]},
+    {id:'155-4-b',power:'20 кВт',heat:'Газовая котельная',cat:'warm',name:'Склад 155/4 Лит.Б',badge:'Отапливаемый',temp:'+17…+20 °C',
+      desc:'Отапливаемый корпус на 1 045 м², сдаётся целиком. Своя газовая котельная и принудительная вентиляция держат +17…+20 °C всю зиму — для товара, который нельзя морозить, и для операций, где люди работают полную смену. Офис расположен внутри корпуса.',
+      area:'1 045 м²',min:'1 045 м² (целиком)',height:'4,8 м',price:'от 200 ₽/м²',
+      tags:['+17…+20 °C зимой','Газовая котельная','Вентиляция','Офис'],
+      spec:[
+        ['Помещение',[['Общая площадь','1 045 м²'],['Минимальный блок','1 045 м² (целиком)'],['Высота потолков','4,8 м'],['Пол','асфальт, нагрузка до 5 т'],['Освещение','есть']]],
+        ['Климат',[['Температурный режим','+17…+20 °C круглый год'],['Отопление','собственная газовая котельная'],['Вентиляция','принудительная']]],
+        ['Погрузка',[['Зона погрузки','подъезд для фур с маневрированием, отдельного дока нет'],['Навес','есть, глубина не менее 2 м'],['Ворота','не менее 4 × 3 м']]],
+        ['Инженерия',[['Электрическая мощность','20 кВт'],['Интернет','Wi-Fi; проводной оптический по запросу'],['Вода','внутри нет; наружная на территории'],['Канализация','нет, только в административном здании 155/8']]],
+        ['Офис и бытовые',[['Офис','внутри корпуса']]],
+        ['Безопасность',[['Видеонаблюдение внутри','требуется дооснащение']]],
+        ['Назначение',[['Подходит под','круглогодичное хранение при стабильном плюсе, лёгкое производство, фасовку, сортировку и комплектацию поставок для маркетплейсов']]]
+      ]},
+    {id:'155-4-v',block:true,power:'20 кВт',heat:'Газовое',cat:'warm',name:'Склад 155/4 Лит.В',badge:'Отапливаемый',temp:'+15…+20 °C',
+      desc:'Отапливаемый склад 2 340 м² с офисом внутри и широким навесом над погрузочной зоной. Товар и упаковка не мокнут под дождём и снегом, пока идёт приёмка или отгрузка. Газовое отопление и вентиляция держат +15…+20 °C, полы «антипыль».',
+      area:'2 340 м²',min:'от 1 000 м²',height:'4,8 м',price:'от 200 ₽/м²',
+      tags:['+15…+20 °C','Широкий навес','Обеспыленный пол','Офис'],
+      spec:[
+        ['Помещение',[['Общая площадь','2 340 м²'],['Минимальный блок','от 1 000 м²'],['Высота потолков','4,8 м'],['Пол','обеспыленный, «антипыль»'],['Освещение','есть']]],
+        ['Климат',[['Температурный режим','+15…+20 °C'],['Отопление','газовое'],['Вентиляция','есть']]],
+        ['Погрузка',[['Зона погрузки','под навесом, отдельного дока нет'],['Навес','широкий, над погрузочной зоной, глубина более 2 м'],['Ворота','не менее 4 × 3 м']]],
+        ['Инженерия',[['Электрическая мощность','20 кВт'],['Интернет','проводной по запросу'],['Вода','внутри нет; наружная на территории'],['Канализация','нет, только в административном здании 155/8']]],
+        ['Офис и бытовые',[['Офис','внутри корпуса']]],
+        ['Безопасность',[['Видеонаблюдение внутри','требуется дооснащение']]],
+        ['Назначение',[['Подходит под','круглогодичное хранение, лёгкое производство, фасовку, сортировку и комплектацию поставок для маркетплейсов']]]
+      ]},
+    {id:'p2',power:'30 кВт',heat:'Кондиционирование',cat:'cool',name:'Склад П2 (охлаждаемый)',badge:'Охлаждаемый',temp:'около +15 °C',
+      desc:'Единственный охлаждаемый корпус комплекса: 460 м² со стабильными +15 °C, режим держат кондиционеры. Для товара и сырья, которым нужен ровный плюс, но не холодильная и не морозильная камера. Полы «антипыль», пандус высотой 1 м под разгрузку фуры — общий с соседним Лит.П.',
+      area:'460 м²',min:'460 м² (целиком)',height:'4,8 м',price:'от 400 ₽/м²',
+      tags:['Около +15 °C','Обеспыленный пол','Пандус 1 м'],
+      spec:[
+        ['Помещение',[['Общая площадь','460 м²'],['Минимальный блок','460 м² (целиком)'],['Высота потолков','4,8 м'],['Пол','обеспыленный, «антипыль»'],['Освещение','есть']]],
+        ['Климат',[['Температурный режим','около +15 °C, поддерживаемый'],['Охлаждение','кондиционирование']]],
+        ['Погрузка',[['Зона погрузки','пандус высотой 1 м — под разгрузку фуры, общий с Лит.П'],['Навес','есть, глубина не менее 2 м'],['Ворота','не менее 4 × 3 м']]],
+        ['Инженерия',[['Электрическая мощность','30 кВт'],['Интернет','Wi-Fi; проводной оптический по запросу'],['Вода','внутри нет; наружная на территории'],['Канализация','нет, только в административном здании 155/8']]],
+        ['Безопасность',[['Видеонаблюдение внутри','требуется дооснащение']]],
+        ['Назначение',[['Подходит под','товар и сырьё, которым нужен ровный плюс, небольшое производство, стеллажное хранение']]]
+      ]}
   ];
 
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -327,7 +441,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     grid.innerHTML=list.map(o=>{
       const tags=o.tags.map(t=>'<span class="tag">'+esc(t)+'</span>').join('');
       return '<article class="object-card" data-cat="'+o.cat+'">'
-        +'<div class="object-photo"><div class="object-badges"><span class="badge badge-'+o.cat+'">'+esc(o.badge)+'</span></div><img src="../img/warehouses/'+o.id+'-1.jpg" alt="Склад StoreKMV — '+esc(o.name)+'" loading="lazy" onerror="this.remove()"><div class="ph-num">'+esc(o.name.replace('Склад ',''))+'</div></div>'
+        +'<div class="object-photo"><div class="object-badges"><span class="badge badge-'+o.cat+'">'+esc(o.badge)+'</span></div><img src="../img/warehouses/'+o.id+'-1.jpg" alt="'+esc(o.name)+' в Георгиевске: '+esc(o.badge.toLowerCase())+' корпус '+esc(o.area)+', температура '+esc(o.temp)+'" loading="lazy" onerror="this.remove()"><div class="ph-num">'+esc(o.name.replace('Склад ',''))+'</div></div>'
         +'<div class="object-body">'
           +'<h3>'+esc(o.name)+'</h3>'
           +'<p>'+esc(o.desc)+'</p>'
@@ -335,11 +449,13 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
             +'<div><div class="param-key">Площадь</div><div class="param-val">'+esc(o.area)+'</div></div>'
             +'<div><div class="param-key">Высота</div><div class="param-val">'+esc(o.height)+'</div></div>'
             +'<div><div class="param-key">Мин. блок</div><div class="param-val">'+esc(o.min)+'</div></div>'
-            +'<div><div class="param-key">Особенность</div><div class="param-val">'+esc(o.extra)+'</div></div>'
+            +'<div><div class="param-key">Температура</div><div class="param-val">'+esc(o.temp)+'</div></div>'
+            +'<div><div class="param-key">Отопление</div><div class="param-val">'+esc(o.heat)+'</div></div>'
+            +'<div><div class="param-key">Мощность</div><div class="param-val">'+esc(o.power)+'</div></div>'
           +'</div>'
           +'<div class="tags">'+tags+'</div>'
-          +'<div class="price">'+esc(o.price)+' <small>/мес.</small></div>'
-          +'<div class="object-actions"><button class="btn btn-primary" data-request="'+o.id+'">Запросить условия</button></div>'
+          +'<div class="price">'+esc(o.price)+' <small>/мес.'+(o.block?' за корпус целиком':'')+'</small></div>'+(o.block?'<div class="price-note">Блоком — по запросу</div>':'')
+          +'<div class="object-actions"><button class="btn btn-primary" data-request="'+o.id+'">Запросить условия</button><button class="btn btn-secondary" data-spec="'+o.id+'">Все параметры</button></div>'
         +'</div>'
       +'</article>';
     }).join('');
@@ -359,6 +475,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   const fobject=document.getElementById('fobject');
   fobject.innerHTML='<option value="">Не выбран / нужна консультация</option>'+objects.map(o=>'<option value="'+esc(o.id)+'">'+esc(o.name)+'</option>').join('');
   function openLead(id){
+    const tObj=objects.find(o=>o.id===id);
+    if(window.storekmvTildaLead&&window.storekmvTildaLead({source:'Каталог: запросить условия',object:tObj?tObj.name:''}))return;
     document.getElementById('formSuccess').classList.remove('show');
     fobject.value=(id&&objects.some(o=>o.id===id))?id:'';
     leadOverlay.classList.add('open');
@@ -375,15 +493,169 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   menuToggle.addEventListener('click',()=>{const open=mobileNav.classList.toggle('open');menuToggle.setAttribute('aria-expanded',open?'true':'false');});
   mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');}));
 
-  // Отправка формы (stub — подключить backend на Tilda)
-  document.getElementById('leadForm').addEventListener('submit',e=>{
+  // Отправка формы: тот же эндпоинт, что на главной. На Tilda адрес функции задаётся
+  // window.STOREKMV_LEAD_ENDPOINT (вставляет build-tilda.py), на своём хостинге — /api/lead.
+  // Сообщение об успехе — только после ответа сервера, иначе заявка теряется молча.
+  const FORM_ENDPOINT=window.STOREKMV_LEAD_ENDPOINT||'/api/lead';
+  function collectUTM(){
+    const p=new URLSearchParams(location.search),o={};
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(k=>{if(p.get(k))o[k]=p.get(k);});
+    return o;
+  }
+  const leadFormEl=document.getElementById('leadForm');
+  leadFormEl.addEventListener('submit',async e=>{
     e.preventDefault();
+    const errEl=document.getElementById('formError');
+    const okEl=document.getElementById('formSuccess');
+    okEl.classList.remove('show');errEl.classList.remove('show');
+    const showErr=m=>{errEl.textContent=m;errEl.classList.add('show');};
     const name=document.getElementById('fname').value.trim();
     const phone=document.getElementById('fphone').value.trim();
-    if(!name||!phone){(!name?document.getElementById('fname'):document.getElementById('fphone')).focus();return;}
-    document.getElementById('formSuccess').classList.add('show');
-    e.target.reset();
+    if(!name){document.getElementById('fname').focus();return showErr('Укажите имя.');}
+    if(!phone){document.getElementById('fphone').focus();return showErr('Укажите телефон.');}
+    if(!document.getElementById('fconsent').checked){return showErr('Необходимо согласие на обработку персональных данных.');}
+    if(document.getElementById('fwebsite').value){return;} // honeypot: тихо игнорируем ботов
+    const payload={
+      source:'catalog',
+      sourceTitle:(document.getElementById('leadTitle')||{textContent:''}).textContent,
+      name:name,
+      company:(document.getElementById('fcompany')||{value:''}).value.trim(),
+      phone:phone,
+      comment:(document.getElementById('fcomment')||{value:''}).value.trim(),
+      context:{object:(document.getElementById('fobject')||{}).value||''},
+      utm:collectUTM(),
+      consent:true,
+      page:location.href,
+      ts:new Date().toISOString()
+    };
+    const btn=document.getElementById('leadSubmit');
+    const orig=btn.textContent;btn.disabled=true;btn.textContent='Отправляем…';
+    try{
+      const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      if(!r.ok)throw new Error('status '+r.status);
+      okEl.classList.add('show');
+      leadFormEl.reset();
+      if(window.ym&&window.YM_ID)ym(window.YM_ID,'reachGoal','lead_submit');
+    }catch(ex){
+      showErr('Не удалось отправить заявку. Позвоните нам: +7 928-630-63-44 или напишите на i@vllobanov.ru');
+    }finally{
+      btn.disabled=false;btn.textContent=orig;
+    }
   });
+  // Паспорт объекта: полные параметры
+  const specOverlay=document.getElementById('specOverlay');
+  const specBody=document.getElementById('specBody');
+  const specTitle=document.getElementById('specTitle');
+  const specSub=document.getElementById('specSub');
+
+  function openSpec(id){
+    const o=objects.find(x=>x.id===id);
+    if(!o)return;
+    specTitle.textContent=o.name;
+    specSub.textContent=o.badge+' · '+o.temp+' · '+o.area+' · '+(o.block?'за корпус целиком '+o.price+'/мес., блоком — по запросу':'ставка '+o.price+'/мес.');
+    specBody.innerHTML=(o.spec||[]).map(function(g){
+      const rows=g[1].map(function(r){
+        return '<div class="spec-row"><dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd></div>';
+      }).join('');
+      return '<div class="spec-group"><h4>'+esc(g[0])+'</h4><dl>'+rows+'</dl></div>';
+    }).join('');
+    specOverlay.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function closeSpec(){
+    specOverlay.classList.remove('open');
+    document.body.style.overflow='';
+  }
+  document.getElementById('specClose').addEventListener('click',closeSpec);
+  specOverlay.addEventListener('click',function(e){if(e.target===specOverlay)closeSpec();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&specOverlay.classList.contains('open'))closeSpec();});
+  grid.addEventListener('click',function(e){
+    const b=e.target.closest('[data-spec]');
+    if(b)openSpec(b.getAttribute('data-spec'));
+  });
+  // Ссылка «Все параметры» с главной: #spec-<id> открывает паспорт нужного корпуса
+  const specHash=location.hash.match(/^#spec-([\w-]+)$/);
+  if(specHash&&objects.some(o=>o.id===specHash[1]))openSpec(specHash[1]);
+
+})();
+</script>
+<script>
+/* Доступность модалок (ревью 2026-10-04). Модалки открываются и закрываются в разных местах
+   кода переключением класса .open — контроллер не трогает эту логику, а следит за классом:
+   переводит фокус внутрь, держит Tab в модалке, закрывает по Escape, блокирует прокрутку
+   фона и возвращает фокус туда, откуда модалку открыли. */
+(function(){
+  var FOCUSABLE='a[href],button:not([disabled]),input:not([disabled]):not([type=hidden]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+  var overlays=[].slice.call(document.querySelectorAll('.modal-overlay'));
+  var opener=null, uid=0;
+  function visible(el){return el.offsetParent!==null&&!el.closest('.hp-field');}
+  function focusables(o){return [].slice.call(o.querySelectorAll(FOCUSABLE)).filter(visible);}
+  function topOpen(){var open=overlays.filter(function(o){return o.classList.contains('open');});return open[open.length-1]||null;}
+  function link(o){
+    if(!o.getAttribute('aria-labelledby')){var t=o.querySelector('h2,h3');if(t){if(!t.id)t.id='mdl-title-'+(++uid);o.setAttribute('aria-labelledby',t.id);}}
+    if(!o.getAttribute('aria-describedby')){var d=o.querySelector('.modal-desc,.detail-desc');if(d){if(!d.id)d.id='mdl-desc-'+(++uid);o.setAttribute('aria-describedby',d.id);}}
+  }
+  function onOpen(o){
+    if(!opener){opener=document.activeElement;}
+    document.body.style.overflow='hidden';
+    setTimeout(function(){var f=focusables(o);var first=f.filter(function(x){return !x.classList.contains('modal-close');})[0]||f[0];if(first&&!o.contains(document.activeElement))first.focus();},30);
+  }
+  function onClose(){
+    if(topOpen())return;
+    document.body.style.overflow='';
+    if(opener&&document.contains(opener)&&typeof opener.focus==='function')opener.focus();
+    opener=null;
+  }
+  function close(o){var c=o.querySelector('.modal-close');if(c)c.click();else o.classList.remove('open');if(o.classList.contains('open'))o.classList.remove('open');}
+  overlays.forEach(function(o){
+    link(o);
+    var was=o.classList.contains('open');
+    new MutationObserver(function(){var now=o.classList.contains('open');if(now===was)return;was=now;now?onOpen(o):onClose();}).observe(o,{attributes:true,attributeFilter:['class']});
+  });
+  document.addEventListener('keydown',function(e){
+    var o=topOpen();if(!o)return;
+    if(e.key==='Escape'){e.preventDefault();close(o);return;}
+    if(e.key==='Tab'){var f=focusables(o);if(!f.length)return;var a=f[0],z=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus();}
+      else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus();}
+      else if(!o.contains(document.activeElement)){e.preventDefault();a.focus();}}
+  });
+})();
+</script>
+<script>
+/* Заявки через форму Tilda (2026-10-04). На Tilda у самописных форм нет сервера, поэтому
+   заявки принимает штатная попап-форма Tilda: она шлёт их на почту, в Telegram и в «Заявки».
+   Кнопки сайта перед открытием попапа заполняют его скрытые поля — что за форма, какой корпус,
+   что посчитано в калькуляторе, UTM. Если попапа на странице нет (локальная копия, свой
+   хостинг) — функция возвращает false, и открывается прежняя форма сайта.
+   В Tilda: попап-блок с ссылкой #popup:lead и скрытыми полями source, object, calc, utm, page. */
+(function(){
+  var HOOK='#popup:lead';
+  function findPopup(){
+    return document.querySelector('[data-tooltip-hook="'+HOOK+'"]')
+        || document.querySelector('[data-popup-hook="'+HOOK+'"]');
+  }
+  function utmString(){
+    var p=new URLSearchParams(location.search),out=[];
+    ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){if(p.get(k))out.push(k+'='+p.get(k));});
+    return out.join('; ');
+  }
+  window.storekmvTildaLead=function(fields){
+    var pop=findPopup();
+    if(!pop)return false;
+    var data={source:'',object:'',calc:'',utm:utmString(),page:location.pathname};
+    for(var k in fields){if(fields[k]!=null&&fields[k]!=='')data[k]=String(fields[k]);}
+    [].forEach.call(pop.querySelectorAll('form'),function(form){
+      for(var key in data){
+        var inp=form.querySelector('input[name="'+key+'"]');
+        if(!inp){inp=document.createElement('input');inp.type='hidden';inp.name=key;form.appendChild(inp);}
+        inp.value=data[key];
+      }
+    });
+    var a=document.createElement('a');a.href=HOOK;a.style.display='none';
+    document.body.appendChild(a);a.click();a.remove();
+    return true;
+  };
 })();
 </script>
 </body>
