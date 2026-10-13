@@ -29,3 +29,6 @@ img/warehouses/*/
 
 # Python cache
 __pycache__/
+
+# Публичные документы для сайта (раздаются через jsDelivr)
+!files/*.pdf

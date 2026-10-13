@@ -36,7 +36,7 @@ LEAD_ENDPOINT = "https://storekmv-api.vercel.app/api/lead"
 # сюда адрес папки вида "https://static.tildacdn.com/lib/..." без слэша на конце.
 # Пустая строка — оставить относительный путь: для локальной версии он рабочий, а сборка
 # напомнит, что ссылку на Tilda ещё предстоит подставить.
-DOCS_BASE = ""
+DOCS_BASE = "https://cdn.jsdelivr.net/gh/vewtal/storekmv@main/files"
 
 # Страницы: исходник -> адрес страницы в Tilda.
 PAGES = {
