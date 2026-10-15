@@ -36,7 +36,9 @@ LEAD_ENDPOINT = "https://storekmv-api.vercel.app/api/lead"
 # сюда адрес папки вида "https://static.tildacdn.com/lib/..." без слэша на конце.
 # Пустая строка — оставить относительный путь: для локальной версии он рабочий, а сборка
 # напомнит, что ссылку на Tilda ещё предстоит подставить.
-DOCS_BASE = "https://cdn.jsdelivr.net/gh/vewtal/storekmv@main/files"
+# PDF — с raw.githubusercontent: отдаёт application/octet-stream (скачивание, а не превью) и CORS *.
+# jsDelivr для этого файла отдавал 503 «No healthy backends» (2026-10-15).
+DOCS_BASE = "https://raw.githubusercontent.com/vewtal/storekmv/main/files"
 # Счётчик Яндекс.Метрики проекта Tilda (подключён в настройках сайта Tilda), нужен для целей
 YM_ID = 102592411
 
