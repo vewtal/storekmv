@@ -37,6 +37,8 @@ LEAD_ENDPOINT = "https://storekmv-api.vercel.app/api/lead"
 # Пустая строка — оставить относительный путь: для локальной версии он рабочий, а сборка
 # напомнит, что ссылку на Tilda ещё предстоит подставить.
 DOCS_BASE = "https://cdn.jsdelivr.net/gh/vewtal/storekmv@main/files"
+# Счётчик Яндекс.Метрики проекта Tilda (подключён в настройках сайта Tilda), нужен для целей
+YM_ID = 102592411
 
 # Страницы: исходник -> адрес страницы в Tilda.
 PAGES = {
@@ -128,7 +130,7 @@ def build_page(src_path: pathlib.Path) -> str:
     parts.extend(LDJSON_RE.findall(raw))
     if LEAD_ENDPOINT:
         parts.append(
-            f'<script>window.STOREKMV_LEAD_ENDPOINT="{LEAD_ENDPOINT}";</script>'
+            f'<script>window.STOREKMV_LEAD_ENDPOINT="{LEAD_ENDPOINT}";window.YM_ID={YM_ID};</script>'
         )
     parts.extend(styles)
     parts.append(body.strip())

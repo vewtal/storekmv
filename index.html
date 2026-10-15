@@ -372,6 +372,9 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 .mp-pilot{background:var(--white)}
 .infra-link{align-self:flex-start;font-weight:600;color:var(--orange);text-decoration:none;border-bottom:1px solid rgba(232,101,10,0.35);transition:border-color .2s}
 .infra-link:hover,.infra-link:focus-visible{border-bottom-color:var(--orange)}
+.nowrap{white-space:nowrap}
+/* typo-guard: на узких экранах длинное слово в заголовке переносится, а не распирает страницу */
+@media (max-width:420px){h1,h2,h3,.param-val{overflow-wrap:break-word;-webkit-hyphens:auto;hyphens:auto}}
 </style>
 </head>
 <body>
@@ -392,9 +395,9 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     <div class="nav-right">
       <a href="tel:+79286306344" class="nav-phone">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
-        +7 928-630-63-44
+        +7 928-630-63-44
       </a>
-      <button class="btn btn-primary" data-modal="view">Записаться на показ</button>
+      <button class="btn btn-primary" data-modal="view">Записаться на показ</button>
       <button class="menu-toggle" id="menuToggle" aria-label="Меню" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -409,7 +412,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     <a href="pages/equipment.html">Техника</a>
     <a href="#infrastructure">Инфраструктура</a>
     <a href="pages/investors.html">Инвесторам</a>
-    <a href="tel:+79286306344">+7 928-630-63-44</a>
+    <a href="tel:+79286306344">+7 928-630-63-44</a>
   </div>
 </nav>
 
@@ -418,12 +421,12 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     <div class="hero-grid">
       <div>
         <h1 class="h1">Склады и производственные помещения <span style="color:#E8650A;white-space:nowrap">в Георгиевске</span></h1>
-        <p>Семь корпусов от 300 до 3 560 м² на закрытой территории 3,6 га. Склады трёх температурных режимов и блоки под производство: нарезаем и оснащаем под ваш процесс.</p>
+        <p>Семь корпусов от 300 до 3 560 м² на закрытой территории 3,6 га. Склады трёх температурных режимов и блоки под производство: нарезаем и оснащаем под ваш процесс.</p>
         <div class="hero-ctas">
           <a href="docs/StoreKMV_presentation.pdf" class="btn btn-primary btn-lg" download data-goal="presentation_download">Скачать презентацию</a>
           <a href="#rent" class="btn btn-secondary btn-lg">Смотреть объекты</a>
         </div>
-        <p class="hero-utp">Аренда напрямую от собственника. Подберём помещение по площади, температуре, мощности и условиям подъезда.</p>
+        <p class="hero-utp">Аренда напрямую от собственника. Подберём помещение по площади, температуре, мощности и условиям подъезда.</p>
       </div>
       <aside class="scheme-card" aria-label="Интерактивный генплан комплекса">
         <div class="scheme-title">
@@ -436,25 +439,25 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
             <img src="img/siteplan-v18.jpg" alt="Генплан производственно-складского комплекса StoreKMV в Георгиевске: корпуса, административное здание и автодром на закрытой территории 3,6 га" class="plan-img" width="2000" height="1500" loading="eager" fetchpriority="high">
           </picture>
           <svg class="plan-map" viewBox="0 0 2000 1500" role="group" aria-label="Корпуса на генплане — выберите здание">
-            <polygon class="bld" data-id="lit-a-6" points="203,195 204,154 625,153 653,161 653,271 626,275 204,276" tabindex="0" role="button" aria-label="Склад 155/6 Лит.А, 2 170 м²"><title>Склад 155/6 Лит.А, 2 170 м²</title></polygon>
-            <polygon class="bld" data-id="lit-p" points="802,184 803,135 1107,134 1137,149 1138,300 803,300" tabindex="0" role="button" aria-label="Склад 155 Лит.П, 1 536 м²"><title>Склад 155 Лит.П, 1 536 м²</title></polygon>
-            <polygon class="bld" data-id="lit-p2" points="854,332 855,305 863,304 1108,304 1132,342 1132,361 1130,368 1100,382 854,381" tabindex="0" role="button" aria-label="Склад П2 охлаждаемый, 460 м²"><title>Склад П2 охлаждаемый, 460 м²</title></polygon>
-            <polygon class="bld" data-id="lit-a-4" points="1274,347 1297,243 1428,244 1429,444 1298,443 1275,365" tabindex="0" role="button" aria-label="Офис 155/4 Лит.А"><title>Офис 155/4 Лит.А</title></polygon>
-            <polygon class="bld" data-id="lit-b-6" points="157,328 158,283 599,282 626,290 628,515 601,521 158,520" tabindex="0" role="button" aria-label="Склад 155/6 Лит.Б, 3 560 м²"><title>Склад 155/6 Лит.Б, 3 560 м²</title></polygon>
-            <polygon class="bld" data-id="lit-b-4" points="1437,458 1438,449 1529,423 1595,439 1596,662 1466,661 1438,656" tabindex="0" role="button" aria-label="Склад 155/4 Лит.Б, 1 045 м²"><title>Склад 155/4 Лит.Б, 1 045 м²</title></polygon>
-            <polygon class="bld" data-id="lit-155-9" points="283,634 284,608 465,608 488,665 487,689 466,723 284,722" tabindex="0" role="button" aria-label="Склад 155/9, 630 м²"><title>Склад 155/9, 630 м²</title></polygon>
-            <polygon class="bld" data-id="lit-v-4" points="1263,704 1264,657 1269,649 1465,648 1757,656 1759,843 1263,844" tabindex="0" role="button" aria-label="Склад 155/4 Лит.В, 2 340 м²"><title>Склад 155/4 Лит.В, 2 340 м²</title></polygon>
-            <polygon class="bld" data-id="adm-155-8" points="623,1121 625,1070 695,1015 1110,1015 1170,1068 1173,1225 1168,1250 940,1326 847,1325 628,1251 623,1226" tabindex="0" role="button" aria-label="Административное здание 155/8, 1 800 м²"><title>Административное здание 155/8, 1 800 м²</title></polygon>
+            <polygon class="bld" data-id="lit-a-6" points="203,195 204,154 625,153 653,161 653,271 626,275 204,276" tabindex="0" role="button" aria-label="Склад 155/6 Лит.А, 2 170 м²"><title>Склад 155/6 Лит.А, 2 170 м²</title></polygon>
+            <polygon class="bld" data-id="lit-p" points="802,184 803,135 1107,134 1137,149 1138,300 803,300" tabindex="0" role="button" aria-label="Склад 155 Лит.П, 1 536 м²"><title>Склад 155 Лит.П, 1 536 м²</title></polygon>
+            <polygon class="bld" data-id="lit-p2" points="854,332 855,305 863,304 1108,304 1132,342 1132,361 1130,368 1100,382 854,381" tabindex="0" role="button" aria-label="Склад П2 охлаждаемый, 460 м²"><title>Склад П2 охлаждаемый, 460 м²</title></polygon>
+            <polygon class="bld" data-id="lit-a-4" points="1274,347 1297,243 1428,244 1429,444 1298,443 1275,365" tabindex="0" role="button" aria-label="Офис 155/4 Лит.А"><title>Офис 155/4 Лит.А</title></polygon>
+            <polygon class="bld" data-id="lit-b-6" points="157,328 158,283 599,282 626,290 628,515 601,521 158,520" tabindex="0" role="button" aria-label="Склад 155/6 Лит.Б, 3 560 м²"><title>Склад 155/6 Лит.Б, 3 560 м²</title></polygon>
+            <polygon class="bld" data-id="lit-b-4" points="1437,458 1438,449 1529,423 1595,439 1596,662 1466,661 1438,656" tabindex="0" role="button" aria-label="Склад 155/4 Лит.Б, 1 045 м²"><title>Склад 155/4 Лит.Б, 1 045 м²</title></polygon>
+            <polygon class="bld" data-id="lit-155-9" points="283,634 284,608 465,608 488,665 487,689 466,723 284,722" tabindex="0" role="button" aria-label="Склад 155/9, 630 м²"><title>Склад 155/9, 630 м²</title></polygon>
+            <polygon class="bld" data-id="lit-v-4" points="1263,704 1264,657 1269,649 1465,648 1757,656 1759,843 1263,844" tabindex="0" role="button" aria-label="Склад 155/4 Лит.В, 2 340 м²"><title>Склад 155/4 Лит.В, 2 340 м²</title></polygon>
+            <polygon class="bld" data-id="adm-155-8" points="623,1121 625,1070 695,1015 1110,1015 1170,1068 1173,1225 1168,1250 940,1326 847,1325 628,1251 623,1226" tabindex="0" role="button" aria-label="Административное здание 155/8, 1 800 м²"><title>Административное здание 155/8, 1 800 м²</title></polygon>
           </svg>
-          <span class="plan-label" data-for="lit-a-6" style="left:21.4%;top:13.6%" aria-hidden="true">155/6 Лит.А</span>
-          <span class="plan-label" data-for="lit-b-6" style="left:19.6%;top:26.0%" aria-hidden="true">155/6 Лит.Б</span>
-          <span class="plan-label" data-for="lit-p" style="left:48.5%;top:14.0%" aria-hidden="true">155 Лит.П</span>
+          <span class="plan-label" data-for="lit-a-6" style="left:21.4%;top:13.6%" aria-hidden="true">155/6 Лит.А</span>
+          <span class="plan-label" data-for="lit-b-6" style="left:19.6%;top:26.0%" aria-hidden="true">155/6 Лит.Б</span>
+          <span class="plan-label" data-for="lit-p" style="left:48.5%;top:14.0%" aria-hidden="true">155 Лит.П</span>
           <span class="plan-label" data-for="lit-p2" style="left:49.6%;top:22.6%" aria-hidden="true">П2</span>
           <span class="plan-label" data-for="lit-155-9" style="left:19.3%;top:43.8%" aria-hidden="true">155/9</span>
           <span class="plan-label plan-label--muted" style="left:25.5%;top:35.6%" aria-hidden="true">КПП</span>
-          <span class="plan-label" data-for="lit-a-4" style="left:67.6%;top:21.8%" aria-hidden="true"><span class="pl-full">Офис 155/4 Лит.А</span><span class="pl-short">Офис</span></span>
-          <span class="plan-label" data-for="lit-b-4" style="left:75.8%;top:34.9%" aria-hidden="true">155/4 Лит.Б</span>
-          <span class="plan-label" data-for="lit-v-4" style="left:75.5%;top:50.5%" aria-hidden="true">155/4 Лит.В</span>
+          <span class="plan-label" data-for="lit-a-4" style="left:67.6%;top:21.8%" aria-hidden="true"><span class="pl-full">Офис 155/4 Лит.А</span><span class="pl-short">Офис</span></span>
+          <span class="plan-label" data-for="lit-b-4" style="left:75.8%;top:34.9%" aria-hidden="true">155/4 Лит.Б</span>
+          <span class="plan-label" data-for="lit-v-4" style="left:75.5%;top:50.5%" aria-hidden="true">155/4 Лит.В</span>
           <span class="plan-label" data-for="adm-155-8" style="left:44.9%;top:74.0%" aria-hidden="true">Админздание 155/8</span>
         </div>
         <div id="bld-panel">
@@ -485,15 +488,15 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     <div class="stats-row">
       <div class="stat-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-        <div class="stat-num">3,6 га</div><div class="stat-lbl">Территория комплекса</div>
+        <div class="stat-num">3,6 га</div><div class="stat-lbl">Территория комплекса</div>
       </div>
       <div class="stat-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M5 20V8l5 3V8l5 3V8l4 3v9"/></svg>
-        <div class="stat-num">7 складов</div><div class="stat-lbl">11 741 м² для хранения</div>
+        <div class="stat-num">7 складов</div><div class="stat-lbl">11 741 м² для хранения</div>
       </div>
       <div class="stat-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21V5a2 2 0 012-2h5a2 2 0 012 2v16"/><path d="M9 8h4M9 12h4M9 16h4"/></svg>
-        <div class="stat-num">2 административных здания</div><div class="stat-lbl">Под офисы и небольшое производство</div>
+        <div class="stat-num">2 административных здания</div><div class="stat-lbl">Под офисы и небольшое производство</div>
       </div>
       <div class="stat-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg>
@@ -501,7 +504,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       </div>
       <div class="stat-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        <div class="stat-num">150 кВт подстанция</div><div class="stat-lbl">С возможностью расширения</div>
+        <div class="stat-num">150 кВт подстанция</div><div class="stat-lbl">С возможностью расширения</div>
       </div>
       <div class="stat-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 012 2v10"/><path d="M2 17h20"/><path d="M6 8V6a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
@@ -509,7 +512,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       </div>
       <div class="stat-item">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <div class="stat-num">38 км</div><div class="stat-lbl">До аэропорта Минеральные Воды</div>
+        <div class="stat-num">38 км</div><div class="stat-lbl">До аэропорта Минеральные Воды</div>
       </div>
     </div>
   </div>
@@ -519,37 +522,37 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   <div class="container">
     <span class="section-label">Что мы предлагаем</span>
     <h2>Шесть форматов: от ответственного хранения до производственного кластера</h2>
-    <p class="lead">Сдаём корпуса целиком и блоками, берём товар на хранение, есть корпуса под ПФЦ Wildberries. Форматы можно совмещать: арендовать склад и отдать часть товара на ответственное хранение.</p>
+    <p class="lead">Сдаём корпуса целиком и блоками, берём товар на хранение, есть корпуса под ПФЦ Wildberries. Форматы можно совмещать: арендовать склад и отдать часть товара на ответственное хранение.</p>
     <div class="directions-grid">
       <a href="#rent" class="direction-card">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 21V12h6v9"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
         <h3>Аренда складов</h3>
-        <p>Неотапливаемые, отапливаемые и охлаждаемые корпуса от 300 до 3 560 м²</p>
+        <p>Неотапливаемые, отапливаемые и охлаждаемые корпуса от 300 до 3 560 м²</p>
       </a>
       <a href="#storage" class="direction-card">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
         <h3>Ответственное хранение</h3>
-        <p>Принимаем товарные партии на хранение по договору и размещаем их на подходящих площадях комплекса</p>
+        <p>Принимаем товарные партии на хранение по договору и размещаем их на подходящих площадях комплекса</p>
       </a>
       <a href="#marketplaces" class="direction-card">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
-        <h3>Маркетплейсы: ПФЦ и поставки</h3>
-        <p>Корпуса 1 045 и 630 м² для оператора ПФЦ Wildberries. Подготовку поставок для селлеров запускаем пилотом</p>
+        <h3>Маркетплейсы: ПФЦ и поставки</h3>
+        <p>Корпуса 1 045 и 630 м² для оператора ПФЦ Wildberries. Подготовку поставок для селлеров запускаем пилотом</p>
       </a>
       <a href="#agro" class="direction-card">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V8"/><path d="M12 8C12 5 10 2 6 2c0 4 2 6 6 6z"/><path d="M12 12c0-3 2-6 6-6 0 4-2 6-6 6z"/><path d="M4 22h16"/></svg>
         <h3>Сезонное агрохранение</h3>
-        <p>Хранение зерна и овощей с сентября по март: неотапливаемые корпуса до 6 м, кран-балка, пандусы, охрана</p>
+        <p>Хранение зерна и овощей с сентября по март: неотапливаемые корпуса до 6 м, кран-балка, пандусы, охрана</p>
       </a>
       <a href="#light-industrial" class="direction-card">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
         <h3>Лёгкое производство</h3>
-        <p>Производственно-складские помещения под фасовку, сборку, комплектацию и другие операции</p>
+        <p>Производственно-складские помещения под фасовку, сборку, комплектацию и другие операции</p>
       </a>
       <a href="#infrastructure" class="direction-card">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         <h3>Офисы и инфраструктура</h3>
-        <p>Административный корпус, офисные и учебные помещения, гостиница и инфраструктура для размещения команды</p>
+        <p>Административный корпус, офисные и учебные помещения, гостиница и инфраструктура для размещения команды</p>
       </a>
     </div>
   </div>
@@ -558,8 +561,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 <section class="section section--light" id="rent">
   <div class="container">
     <span class="section-label">Аренда</span>
-    <h2>Каталог складов в аренду в Георгиевске</h2>
-    <p class="lead">7 корпусов с разными параметрами. Аренда блоком от 300 м² или целым корпусом. Условия и срок предоставления согласуются по запросу.</p>
+    <h2>Каталог складов в аренду в Георгиевске</h2>
+    <p class="lead">7 корпусов с разными параметрами. Аренда блоком от 300 м² или целым корпусом. Условия и срок предоставления согласуются по запросу.</p>
     <div class="filters">
       <button class="filter-btn active" data-filter="all">Все объекты</button>
       <button class="filter-btn" data-filter="cold">Неотапливаемые</button>
@@ -572,17 +575,17 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
         <div class="object-photo"><div class="object-badges"><span class="badge badge-cold">Неотапливаемый</span></div><img src="img/warehouses/155-9-1.jpg" alt="Склад 155/9 в Георгиевске: отдельный корпус 630 м² с парковкой и зоной погрузки" loading="lazy" width="800" height="500" onerror="this.remove()"></div>
         <div class="object-body">
           <h3>Склад 155/9</h3>
-          <p>Отдельный корпус со своей парковкой — для тех, кому нужен склад без соседей по зданию.</p>
+          <p>Отдельный корпус со своей парковкой — для тех, кому нужен склад без соседей по зданию.</p>
           <div class="params">
-            <div><div class="param-key">Площадь</div><div class="param-val">630 м²</div></div>
-            <div><div class="param-key">Высота</div><div class="param-val">6 м</div></div>
-            <div><div class="param-key">Мин. блок</div><div class="param-val">от 300 м²</div></div>
-            <div><div class="param-key">Температура</div><div class="param-val">+5…+20 °C</div></div>
+            <div><div class="param-key">Площадь</div><div class="param-val">630 м²</div></div>
+            <div><div class="param-key">Высота</div><div class="param-val">6 м</div></div>
+            <div><div class="param-key">Мин. блок</div><div class="param-val">от 300 м²</div></div>
+            <div><div class="param-key">Температура</div><div class="param-val">+5…+20 °C</div></div>
             <div><div class="param-key">Отопление</div><div class="param-val">Нет, можно подвести</div></div>
-            <div><div class="param-key">Мощность</div><div class="param-val">10 кВт</div></div>
+            <div><div class="param-key">Мощность</div><div class="param-val">10 кВт</div></div>
           </div>
           <div class="tags"><span class="tag">Компактный</span><span class="tag">Антипыль</span><span class="tag">Своя парковка</span></div>
-          <div class="price">от 230 ₽/м² <small>/мес.</small></div>
+          <div class="price">от 230 ₽/м² <small>/мес.</small></div>
           <div class="object-actions">
             <button class="btn btn-primary" data-calc="155/9" data-area="630" data-min="300" data-price="230">Рассчитать</button>
             <a class="btn btn-secondary" href="pages/warehouses.html#spec-155-9">Все параметры</a>
@@ -593,18 +596,18 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <article class="object-card" data-type="cold">
         <div class="object-photo"><div class="object-badges"><span class="badge badge-cold">Неотапливаемый</span></div><img src="img/warehouses/lit-p-1.jpg" alt="Склад 155 Лит.П в Георгиевске: две секции по 768 м² с кран-балкой и погрузочным пандусом" loading="lazy" width="800" height="500" onerror="this.remove()"></div>
         <div class="object-body">
-          <h3>Склад 155 Лит.П</h3>
-          <p>Две секции по 768 м² с кран-балкой и высотой 6 м — под тяжёлый и длинномерный груз.</p>
+          <h3>Склад 155 Лит.П</h3>
+          <p>Две секции по 768 м² с кран-балкой и высотой 6 м — под тяжёлый и длинномерный груз.</p>
           <div class="params">
-            <div><div class="param-key">Площадь</div><div class="param-val">1 536 м²</div></div>
-            <div><div class="param-key">Высота</div><div class="param-val">6 м</div></div>
-            <div><div class="param-key">Мин. блок</div><div class="param-val">768 м²</div></div>
-            <div><div class="param-key">Температура</div><div class="param-val">+5…+25 °C</div></div>
+            <div><div class="param-key">Площадь</div><div class="param-val">1 536 м²</div></div>
+            <div><div class="param-key">Высота</div><div class="param-val">6 м</div></div>
+            <div><div class="param-key">Мин. блок</div><div class="param-val">768 м²</div></div>
+            <div><div class="param-key">Температура</div><div class="param-val">+5…+25 °C</div></div>
             <div><div class="param-key">Отопление</div><div class="param-val">Нет, можно подвести</div></div>
-            <div><div class="param-key">Мощность</div><div class="param-val">30 кВт</div></div>
+            <div><div class="param-key">Мощность</div><div class="param-val">30 кВт</div></div>
           </div>
           <div class="tags"><span class="tag">Кран-балка</span><span class="tag">Офис</span><span class="tag">Пандус</span><span class="tag">2 секции</span></div>
-          <div class="price">от 200 ₽/м² <small>/мес.</small></div>
+          <div class="price">от 200 ₽/м² <small>/мес.</small></div>
           <div class="object-actions">
             <button class="btn btn-primary" data-calc="Лит.П" data-area="1536" data-min="768" data-price="200">Рассчитать</button>
             <a class="btn btn-secondary" href="pages/warehouses.html#spec-lit-p">Все параметры</a>
@@ -615,18 +618,18 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <article class="object-card" data-type="cold">
         <div class="object-photo"><div class="object-badges"><span class="badge badge-cold">Неотапливаемый</span></div><img src="img/warehouses/155-6-b-1.jpg" alt="Склад 155/6 Лит.Б в Георгиевске: крупнейший корпус комплекса 3 560 м² в двух секциях" loading="lazy" width="800" height="500" onerror="this.remove()"></div>
         <div class="object-body">
-          <h3>Склад 155/6 Лит.Б</h3>
-          <p>Самый большой корпус комплекса: 3 560 м² в двух секциях — под крупный товарный запас.</p>
+          <h3>Склад 155/6 Лит.Б</h3>
+          <p>Самый большой корпус комплекса: 3 560 м² в двух секциях — под крупный товарный запас.</p>
           <div class="params">
-            <div><div class="param-key">Площадь</div><div class="param-val">3 560 м²</div></div>
-            <div><div class="param-key">Высота</div><div class="param-val">3–4,8 м</div></div>
-            <div><div class="param-key">Мин. блок</div><div class="param-val">1 400 м²</div></div>
-            <div><div class="param-key">Температура</div><div class="param-val">+5…+25 °C</div></div>
+            <div><div class="param-key">Площадь</div><div class="param-val">3 560 м²</div></div>
+            <div><div class="param-key">Высота</div><div class="param-val">3–4,8 м</div></div>
+            <div><div class="param-key">Мин. блок</div><div class="param-val">1 400 м²</div></div>
+            <div><div class="param-key">Температура</div><div class="param-val">+5…+25 °C</div></div>
             <div><div class="param-key">Отопление</div><div class="param-val">Нет</div></div>
-            <div><div class="param-key">Мощность</div><div class="param-val">20 кВт</div></div>
+            <div><div class="param-key">Мощность</div><div class="param-val">20 кВт</div></div>
           </div>
           <div class="tags"><span class="tag">Зонирование</span><span class="tag">Дистрибуция</span><span class="tag">2 секции</span></div>
-          <div class="price">от 180 ₽/м² <small>/мес.</small></div>
+          <div class="price">от 180 ₽/м² <small>/мес.</small></div>
           <div class="object-actions">
             <button class="btn btn-primary" data-calc="155/6 Лит.Б" data-area="3560" data-min="1400" data-price="180">Рассчитать</button>
             <a class="btn btn-secondary" href="pages/warehouses.html#spec-155-6-b">Все параметры</a>
@@ -637,18 +640,18 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <article class="object-card" data-type="warm">
         <div class="object-photo"><div class="object-badges"><span class="badge badge-warm">Отапливаемый</span></div><img src="img/warehouses/155-4-v-1.jpg" alt="Склад 155/4 Лит.В в Георгиевске: отапливаемый корпус 2 340 м² с широким навесом над погрузкой" loading="lazy" width="800" height="500" onerror="this.remove()"></div>
         <div class="object-body">
-          <h3>Склад 155/4 Лит.В</h3>
-          <p>Отапливаемый склад с офисом внутри и широким навесом над погрузочной зоной.</p>
+          <h3>Склад 155/4 Лит.В</h3>
+          <p>Отапливаемый склад с офисом внутри и широким навесом над погрузочной зоной.</p>
           <div class="params">
-            <div><div class="param-key">Площадь</div><div class="param-val">2 340 м²</div></div>
-            <div><div class="param-key">Высота</div><div class="param-val">4,8 м</div></div>
-            <div><div class="param-key">Мин. блок</div><div class="param-val">от 1 000 м²</div></div>
-            <div><div class="param-key">Температура</div><div class="param-val">+15…+20 °C</div></div>
+            <div><div class="param-key">Площадь</div><div class="param-val">2 340 м²</div></div>
+            <div><div class="param-key">Высота</div><div class="param-val">4,8 м</div></div>
+            <div><div class="param-key">Мин. блок</div><div class="param-val">от 1 000 м²</div></div>
+            <div><div class="param-key">Температура</div><div class="param-val">+15…+20 °C</div></div>
             <div><div class="param-key">Отопление</div><div class="param-val">Газовое</div></div>
-            <div><div class="param-key">Мощность</div><div class="param-val">20 кВт</div></div>
+            <div><div class="param-key">Мощность</div><div class="param-val">20 кВт</div></div>
           </div>
           <div class="tags"><span class="tag">Отапливаемый</span><span class="tag">Газовое отопление</span><span class="tag">Офис</span><span class="tag">Навес</span></div>
-          <div class="price">от 200 ₽/м² <small>/мес.</small></div>
+          <div class="price">от 200 ₽/м² <small>/мес.</small></div>
           <div class="object-actions">
             <button class="btn btn-primary" data-calc="155/4 Лит.В" data-area="2340" data-min="1000" data-price="200">Рассчитать</button>
             <a class="btn btn-secondary" href="pages/warehouses.html#spec-155-4-v">Все параметры</a>
@@ -659,18 +662,18 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <article class="object-card" data-type="cold">
         <div class="object-photo"><div class="object-badges"><span class="badge badge-cold">Неотапливаемый</span></div><img src="img/warehouses/155-6-a-1.jpg" alt="Склад 155/6 Лит.А в Георгиевске: неотапливаемый блок 2 170 м² с пандусом под паллетное хранение" loading="lazy" width="800" height="500" onerror="this.remove()"></div>
         <div class="object-body">
-          <h3>Склад 155/6 Лит.А</h3>
-          <p>Паллетное хранение на 2 170 м²: пандус и асфальтовый пол под нагрузку 5 т/м².</p>
+          <h3>Склад 155/6 Лит.А</h3>
+          <p>Паллетное хранение на 2 170 м²: пандус и асфальтовый пол под нагрузку 5 т/м².</p>
           <div class="params">
-            <div><div class="param-key">Площадь</div><div class="param-val">2 170 м²</div></div>
-            <div><div class="param-key">Высота</div><div class="param-val">4,8 м</div></div>
-            <div><div class="param-key">Мин. блок</div><div class="param-val">1 000 м²</div></div>
-            <div><div class="param-key">Температура</div><div class="param-val">+5…+25 °C</div></div>
+            <div><div class="param-key">Площадь</div><div class="param-val">2 170 м²</div></div>
+            <div><div class="param-key">Высота</div><div class="param-val">4,8 м</div></div>
+            <div><div class="param-key">Мин. блок</div><div class="param-val">1 000 м²</div></div>
+            <div><div class="param-key">Температура</div><div class="param-val">+5…+25 °C</div></div>
             <div><div class="param-key">Отопление</div><div class="param-val">Нет</div></div>
-            <div><div class="param-key">Мощность</div><div class="param-val">20 кВт</div></div>
+            <div><div class="param-key">Мощность</div><div class="param-val">20 кВт</div></div>
           </div>
           <div class="tags"><span class="tag">Пандус</span><span class="tag">Зонирование</span><span class="tag">Крупногабарит</span></div>
-          <div class="price">от 180 ₽/м² <small>/мес.</small></div>
+          <div class="price">от 180 ₽/м² <small>/мес.</small></div>
           <div class="object-actions">
             <button class="btn btn-primary" data-calc="155/6 Лит.А" data-area="2170" data-min="1000" data-price="180">Рассчитать</button>
             <a class="btn btn-secondary" href="pages/warehouses.html#spec-155-6-a">Все параметры</a>
@@ -681,18 +684,18 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <article class="object-card" data-type="warm">
         <div class="object-photo"><div class="object-badges"><span class="badge badge-warm">Отапливаемый</span></div><img src="img/warehouses/155-4-b-1.jpg" alt="Склад 155/4 Лит.Б в Георгиевске: отапливаемый корпус 1 045 м² с газовой котельной и вентиляцией" loading="lazy" width="800" height="500" onerror="this.remove()"></div>
         <div class="object-body">
-          <h3>Склад 155/4 Лит.Б</h3>
-          <p>Отапливаемый корпус целиком: газовая котельная, вентиляция, +17…+20 °C круглый год.</p>
+          <h3>Склад 155/4 Лит.Б</h3>
+          <p>Отапливаемый корпус целиком: газовая котельная, вентиляция, +17…+20 °C круглый год.</p>
           <div class="params">
-            <div><div class="param-key">Площадь</div><div class="param-val">1 045 м²</div></div>
-            <div><div class="param-key">Высота</div><div class="param-val">4,8 м</div></div>
-            <div><div class="param-key">Мин. блок</div><div class="param-val">1 045 м² (целиком)</div></div>
-            <div><div class="param-key">Температура</div><div class="param-val">+17…+20 °C</div></div>
+            <div><div class="param-key">Площадь</div><div class="param-val">1 045 м²</div></div>
+            <div><div class="param-key">Высота</div><div class="param-val">4,8 м</div></div>
+            <div><div class="param-key">Мин. блок</div><div class="param-val">1 045 м² (целиком)</div></div>
+            <div><div class="param-key">Температура</div><div class="param-val">+17…+20 °C</div></div>
             <div><div class="param-key">Отопление</div><div class="param-val">Газовая котельная</div></div>
-            <div><div class="param-key">Мощность</div><div class="param-val">20 кВт</div></div>
+            <div><div class="param-key">Мощность</div><div class="param-val">20 кВт</div></div>
           </div>
           <div class="tags"><span class="tag">Газовое отопление</span><span class="tag">Вентиляция</span><span class="tag">Офис</span></div>
-          <div class="price">от 200 ₽/м² <small>/мес.</small></div>
+          <div class="price">от 200 ₽/м² <small>/мес.</small></div>
           <div class="object-actions">
             <button class="btn btn-primary" data-calc="155/4 Лит.Б" data-area="1045" data-min="1045" data-price="200">Рассчитать</button>
             <a class="btn btn-secondary" href="pages/warehouses.html#spec-155-4-b">Все параметры</a>
@@ -704,17 +707,17 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
         <div class="object-photo"><div class="object-badges"><span class="badge badge-cool">Охлаждаемый</span></div><img src="img/warehouses/p2-1.jpg" alt="Склад П2 в Георгиевске: охлаждаемое помещение 460 м² с температурой около +15 °C и пандусом" loading="lazy" width="800" height="500" onerror="this.remove()"></div>
         <div class="object-body">
           <h3>Склад П2 (охлаждаемый)</h3>
-          <p>Единственный охлаждаемый корпус комплекса — стабильные +15 °C на 460 м².</p>
+          <p>Единственный охлаждаемый корпус комплекса — стабильные +15 °C на 460 м².</p>
           <div class="params">
-            <div><div class="param-key">Площадь</div><div class="param-val">460 м²</div></div>
-            <div><div class="param-key">Высота</div><div class="param-val">4,8 м</div></div>
-            <div><div class="param-key">Мин. блок</div><div class="param-val">460 м²</div></div>
-            <div><div class="param-key">Температура</div><div class="param-val">около +15 °C</div></div>
+            <div><div class="param-key">Площадь</div><div class="param-val">460 м²</div></div>
+            <div><div class="param-key">Высота</div><div class="param-val">4,8 м</div></div>
+            <div><div class="param-key">Мин. блок</div><div class="param-val">460 м²</div></div>
+            <div><div class="param-key">Температура</div><div class="param-val">около +15 °C</div></div>
             <div><div class="param-key">Отопление</div><div class="param-val">Кондиционирование</div></div>
-            <div><div class="param-key">Мощность</div><div class="param-val">30 кВт</div></div>
+            <div><div class="param-key">Мощность</div><div class="param-val">30 кВт</div></div>
           </div>
-          <div class="tags"><span class="tag">Охлаждаемый</span><span class="tag">Около +15 °C</span><span class="tag">Пандус</span></div>
-          <div class="price">от 400 ₽/м² <small>/мес.</small></div>
+          <div class="tags"><span class="tag">Охлаждаемый</span><span class="tag">Около +15 °C</span><span class="tag">Пандус</span></div>
+          <div class="price">от 400 ₽/м² <small>/мес.</small></div>
           <div class="object-actions">
             <button class="btn btn-primary" data-calc="Лит.П2" data-area="460" data-min="460" data-price="400">Рассчитать</button>
             <a class="btn btn-secondary" href="pages/warehouses.html#spec-p2">Все параметры</a>
@@ -725,7 +728,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     </div>
     <div class="warehouse-cta" style="gap:12px;flex-wrap:wrap">
       <button class="btn btn-primary btn-lg" data-modal="pick">Подобрать подходящий объект</button>
-      <a href="pages/warehouses.html" class="btn btn-secondary btn-lg">Все объекты в каталоге →</a>
+      <a href="pages/warehouses.html" class="btn btn-secondary btn-lg">Все объекты в каталоге →</a>
     </div>
   </div>
 </section>
@@ -735,9 +738,9 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     <div class="service-block">
       <div>
         <span class="section-label">Ответственное хранение</span>
-        <h2>Хранение товарных партий по договору</h2>
+        <h2>Хранение товарных партий по договору</h2>
         <p>StoreKMV принимает товар на ответственное хранение и самостоятельно распределяет его по подходящим свободным площадям комплекса.</p>
-        <p>Мы работаем со средними и крупными товарными партиями без тарификации по отдельным паллето-местам. Стоимость рассчитывается с учётом фактически занимаемой площади, характеристик груза, срока хранения и состава дополнительных операций.</p>
+        <p>Мы работаем со средними и крупными товарными партиями без тарификации по отдельным паллето-местам. Стоимость рассчитывается с учётом фактически занимаемой площади, характеристик груза, срока хранения и состава дополнительных операций.</p>
         <div class="service-actions">
           <button class="btn btn-primary" data-modal="3pl">Оставить заявку</button>
         </div>
@@ -745,21 +748,21 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <div class="dark-panel">
         <p class="panel-title">Что входит</p>
         <ul class="op-list">
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></svg><span class="op-item-text">Приёмка товара с пересчётом и актом</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 002 2h16a2 2 0 002-2v-6l-3.45-6.89A2 2 0 0016.76 4H7.24a2 2 0 00-1.79 1.11z"/></svg><span class="op-item-text">Приёмка товара с пересчётом и актом</span></li>
           <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg><span class="op-item-text">Размещение на подходящей свободной площади комплекса</span></li>
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg><span class="op-item-text">Учёт, перемещение, выдача и дополнительные операции — по условиям договора</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg><span class="op-item-text">Учёт, перемещение, выдача и дополнительные операции — по условиям договора</span></li>
           <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="6" width="14" height="11"/><polygon points="15 9 19 9 22 12 22 17 15 17"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg><span class="op-item-text">Отгрузка транспортным компаниям</span></li>
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="op-item-text">Погрузочно-разгрузочные работы — от 2 500 ₽/час, рассчитываются под груз</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="op-item-text">Погрузочно-разгрузочные работы — от 2 500 ₽/час, рассчитываются под груз</span></li>
         </ul>
       </div>
     </div>
     <div class="agro-callout" id="agro">
       <div class="agro-text">
         <span class="section-label">Сезон 2026/27 · Агрохранение</span>
-        <h3>Примем зерно и овощи на хранение с сентября</h3>
-        <p>Неотапливаемые корпуса высотой до 6 м: 155 Лит.П — две секции по 768 м² с кран-балкой и пандусом, 155/9 — отдельный корпус 630 м² со своей парковкой. Закрытая территория с охраной и КПП, прямой выезд на Р-217 «Кавказ». Площади на сезон бронируются заранее.</p>
+        <h3>Примем зерно и овощи на хранение с сентября</h3>
+        <p>Неотапливаемые корпуса высотой до 6 м: 155 Лит.П — две секции по 768 м² с кран-балкой и пандусом, 155/9 — отдельный корпус 630 м² со своей парковкой. Закрытая территория с охраной и КПП, прямой выезд на Р-217 «Кавказ». Площади на сезон бронируются заранее.</p>
       </div>
-      <button class="btn btn-primary" data-modal="agro">Забронировать площади на сезон</button>
+      <button class="btn btn-primary" data-modal="agro">Забронировать площади на сезон</button>
     </div>
   </div>
 </section>
@@ -769,32 +772,32 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     <div class="service-block">
       <div>
         <span class="section-label">Маркетплейсы</span>
-        <h2>Корпуса под ПФЦ Wildberries в Георгиевске</h2>
-        <p>Под партнёрский фулфилмент-центр (ПФЦ) Wildberries сдаём два корпуса, каждый целиком: отапливаемый 155/4 Лит.Б на 1 045 м² и отдельно стоящий 155/9 на 630 м². Оба проходят порог WB по площади — от 500 м².</p>
-        <p>В 155/4 Лит.Б своя газовая котельная держит зимой +17…+20 °C. У 155/9 отдельный подъезд и своя парковка; отопления сейчас нет — при долгосрочном договоре проведём его своими силами.</p>
-        <p>Договор — напрямую с собственником, документы на помещение для заявки в WB предоставим. Камеры, стеллажи и Wi-Fi внутри оператор устанавливает сам — на оснащение WB даёт 30 дней после одобрения заявки. Параметры — в паспортах <a href="pages/warehouses.html#spec-155-4-b">155/4 Лит.Б</a> и <a href="pages/warehouses.html#spec-155-9">155/9</a>.</p>
+        <h2>Корпуса под ПФЦ Wildberries в Георгиевске</h2>
+        <p>Сдаём оператору партнёрского фулфилмент-центра (ПФЦ) Wildberries два корпуса, каждый только целиком. Оба больше 500 м² — это минимум площади, который WB требует от ПФЦ.</p>
+        <p>Договор заключаете напрямую с собственником. Документы на помещение для заявки в WB предоставим.</p>
+        <p>Камеры, стеллажи и Wi-Fi внутри ставит оператор: на оснащение WB даёт 30 дней после одобрения заявки. Все параметры — в паспортах <a href="pages/warehouses.html#spec-155-4-b">155/4 Лит.Б</a> и <a href="pages/warehouses.html#spec-155-9">155/9</a>.</p>
         <div class="service-actions">
-          <button class="btn btn-primary" data-modal="pfc">Обсудить аренду под ПФЦ</button>
+          <button class="btn btn-primary" data-modal="pfc">Обсудить аренду под ПФЦ</button>
         </div>
       </div>
       <div class="dark-panel">
         <p class="panel-title">Что получает оператор</p>
         <ul class="op-list">
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 21V12h6v9"/></svg><span class="op-item-text">155/4 Лит.Б — 1 045 м², высота 4,8 м, офис внутри, +17…+20 °C зимой от газовой котельной, навес над погрузкой от 2 м</span></li>
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 21V12h6v9"/></svg><span class="op-item-text">155/9 — 630 м², высота 6 м, отдельный подъезд и своя парковка; отопление проводим при долгосрочном договоре</span></li>
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="6" width="14" height="11"/><polygon points="15 9 19 9 22 12 22 17 15 17"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg><span class="op-item-text">Асфальт, подъезд и разворот фур; ворота и арки на маршруте от 3,2 м, есть резервный подъезд</span></li>
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><span class="op-item-text">Выделенная мощность 20 кВт (Лит.Б) и 10 кВт (155/9), увеличение по ТУ</span></li>
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg><span class="op-item-text">Оптический интернет подводим к складу</span></li>
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><span class="op-item-text">Режим работы территории согласуем под график ПФЦ</span></li>
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="op-item-text">Закрытая территория 3,6 га: КПП, пропускная система, круглосуточная охрана, видеонаблюдение по территории</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 21V12h6v9"/></svg><span class="op-item-text">155/4 Лит.Б — 1 045 м², высота 4,8 м, офис внутри, 20 кВт</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg><span class="op-item-text">В Лит.Б своя газовая котельная: зимой +17…+20 °C. Навес над погрузкой от 2 м</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 21V12h6v9"/></svg><span class="op-item-text">155/9 — отдельно стоящий, 630 м², высота 6 м, 10 кВт, свой подъезд и парковка</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg><span class="op-item-text">В 155/9 отопления пока нет — проведём своими силами при долгосрочном договоре</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="6" width="14" height="11"/><polygon points="15 9 19 9 22 12 22 17 15 17"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg><span class="op-item-text">Асфальт, подъезд и разворот фур, ворота и арки на маршруте от 3,2 м, резервный подъезд</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.55a11 11 0 0114.08 0"/><path d="M1.42 9a16 16 0 0121.16 0"/><path d="M8.53 16.11a6 6 0 016.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg><span class="op-item-text">Оптический интернет подводим к складу, режим работы территории согласуем под график ПФЦ</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="op-item-text">Территория 3,6 га: КПП, пропускная система, круглосуточная охрана, видеонаблюдение</span></li>
         </ul>
       </div>
     </div>
     <div class="agro-callout mp-pilot">
       <div class="agro-text">
-        <span class="section-label">Для селлеров · пилот</span>
-        <h3>Подготовка поставок на Wildberries и Ozon</h3>
-        <p>Принимаем товар с пересчётом, маркируем штрихкодами площадки, упаковываем и собираем короба и паллеты под бронь поставки, храним запас между поставками. Услуга в пилоте: состав операций и цену считаем под ваш товар и объём.</p>
+        <span class="section-label">Для селлеров · пилот</span>
+        <h3>Подготовка поставок на Wildberries и Ozon</h3>
+        <p>Принимаем товар с пересчётом, маркируем штрихкодами площадки, упаковываем и собираем короба и паллеты под бронь поставки, храним запас между поставками. Услуга в пилоте: состав операций и цену считаем под ваш товар и объём.</p>
       </div>
       <button class="btn btn-secondary" data-modal="mp">Обсудить пилот</button>
     </div>
@@ -805,14 +808,14 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 <section class="section section--navy" id="light-industrial">
   <div class="container">
     <span class="section-label">Лёгкое производство</span>
-    <h2 style="color:#fff">Блоки под производство от 500 м², формат light industrial на КМВ</h2>
-    <p class="lead">Производственно-складские помещения от 500 м² для фасовки, сборки, комплектации и других операций. Обеспечим отдельным входом, офисом и необходимой инфраструктурой. Что именно нужно вашему процессу, определяем до договора: температурный режим, электрическую мощность, вентиляцию, нагрузку на пол, пожарную категорию.</p>
+    <h2 style="color:#fff">Блоки под производство от 500 м², формат light industrial на КМВ</h2>
+    <p class="lead">Производственно-складские помещения от 500 м² для фасовки, сборки, комплектации и других операций. Обеспечим отдельным входом, офисом и необходимой инфраструктурой. Что именно нужно вашему процессу, определяем до договора: температурный режим, электрическую мощность, вентиляцию, нагрузку на пол, пожарную категорию.</p>
     <div class="scenario-grid">
-      <div class="scenario-card"><div class="scenario-num">01</div><h3>Упаковка и фасовка</h3><p>Зоны фасовки и упаковки. Под конкретную продукцию проверяем технологические, санитарные и инженерные требования.</p></div>
-      <div class="scenario-card"><div class="scenario-num">02</div><h3>Лёгкое производство</h3><p>Швейные, сборочные, деревообрабатывающие операции. До договора согласуем мощность, вентиляцию, пожарную категорию и допустимую нагрузку на пол.</p></div>
-      <div class="scenario-card"><div class="scenario-num">03</div><h3>Подготовка товаров для маркетплейсов</h3><p>Приёмка, проверка, маркировка, упаковка и подготовка партий к отправке. Состав операций согласуем отдельно, запускаем пилотом.</p></div>
-      <div class="scenario-card"><div class="scenario-num">04</div><h3>Переработка сельхозпродукции</h3><p>Фасовка, обработка и хранение сельхозпродукции. Проверяем требования к температуре, вентиляции, воде, канализации и санитарному режиму.</p></div>
-      <div class="scenario-card"><div class="scenario-num">05</div><h3>Бытовые товары и потребительская продукция</h3><p>Производство и фасовка потребительских товаров. До запуска оцениваем процесс, сырьё и обязательные требования к помещению.</p></div>
+      <div class="scenario-card"><div class="scenario-num">01</div><h3>Упаковка и фасовка</h3><p>Зоны фасовки и упаковки. Под конкретную продукцию проверяем технологические, санитарные и инженерные требования.</p></div>
+      <div class="scenario-card"><div class="scenario-num">02</div><h3>Лёгкое производство</h3><p>Швейные, сборочные, деревообрабатывающие операции. До договора согласуем мощность, вентиляцию, пожарную категорию и допустимую нагрузку на пол.</p></div>
+      <div class="scenario-card"><div class="scenario-num">03</div><h3>Подготовка товаров для маркетплейсов</h3><p>Приёмка, проверка, маркировка, упаковка и подготовка партий к отправке. Состав операций согласуем отдельно, запускаем пилотом.</p></div>
+      <div class="scenario-card"><div class="scenario-num">04</div><h3>Переработка сельхозпродукции</h3><p>Фасовка, обработка и хранение сельхозпродукции. Проверяем требования к температуре, вентиляции, воде, канализации и санитарному режиму.</p></div>
+      <div class="scenario-card"><div class="scenario-num">05</div><h3>Бытовые товары и потребительская продукция</h3><p>Производство и фасовка потребительских товаров. До запуска оцениваем процесс, сырьё и обязательные требования к помещению.</p></div>
       <div class="scenario-card"><div class="scenario-num">06</div><h3>Сборка и комплектация</h3><p>Сборка готовых изделий, формирование комплектов и комплектация заказов для дистрибьюторов СКФО.</p></div>
     </div>
     <button class="btn btn-primary btn-lg" data-modal="pick">Подобрать блок</button>
@@ -823,13 +826,13 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   <div class="container">
     <span class="section-label">Инфраструктура</span>
     <h2>Офисы, гостиница и инфраструктура комплекса</h2>
-    <p class="lead">Административный корпус, офисные и учебные помещения, гостиница и инфраструктура для размещения сотрудников, подрядчиков и партнёров.</p>
+    <p class="lead">Административный корпус, офисные и учебные помещения, гостиница и инфраструктура для размещения сотрудников, подрядчиков и партнёров.</p>
     <div class="infra-grid">
       <div class="infra-card">
         <div class="infra-icon"><svg width="96" height="48" viewBox="0 0 40 20" fill="none" stroke="currentColor" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M0 19.5H40"/><path d="M10 19.5V1H30V19.5"/><path d="M9.2 1H30.8"/><path d="M10 5H1V19.5M30 5H39V19.5"/><path d="M1 16.5H10M30 16.5H39"/><rect x="11.33" y="3" width="2.4" height="5.5" rx="0.3"/><rect x="15.07" y="3" width="2.4" height="5.5" rx="0.3"/><rect x="18.8" y="3" width="2.4" height="5.5" rx="0.3"/><rect x="22.53" y="3" width="2.4" height="5.5" rx="0.3"/><rect x="26.27" y="3" width="2.4" height="5.5" rx="0.3"/><rect x="2.5" y="7.5" width="2.4" height="2.4" rx="0.3"/><rect x="2.5" y="12" width="2.4" height="2.4" rx="0.3"/><rect x="6.1" y="7.5" width="2.4" height="2.4" rx="0.3"/><rect x="6.1" y="12" width="2.4" height="2.4" rx="0.3"/><rect x="31.5" y="7.5" width="2.4" height="2.4" rx="0.3"/><rect x="31.5" y="12" width="2.4" height="2.4" rx="0.3"/><rect x="35.1" y="7.5" width="2.4" height="2.4" rx="0.3"/><rect x="35.1" y="12" width="2.4" height="2.4" rx="0.3"/><path d="M16.3 11H23.7"/><rect x="17.8" y="11" width="4.4" height="5.5"/><path d="M20 11V16.5"/><path d="M15.5 19.5L17.3 16.5H22.7L24.5 19.5"/><path d="M16.4 18H23.6"/></svg></div>
         <h3>Административное здание 155/8</h3>
-        <p>Трёхэтажное здание на 1 800 м². Кабинеты различного размера — от 20 до 265 м², просторный опенспейс на втором этаже, столовая, оптический интернет. В здании работает гостиница «Атмосфера». Планировку и свободные варианты пришлём по запросу.</p>
-        <div class="tags"><span class="tag">Кабинеты от 20 м²</span><span class="tag">Опенспейс</span><span class="tag">Столовая</span><span class="tag">Оптический интернет</span><span class="tag">Парковка</span></div>
+        <p>Трёхэтажное здание на 1 800 м². Кабинеты различного размера — от 20 до 265 м², просторный опенспейс на втором этаже, столовая, оптический интернет. Планировку и свободные варианты пришлём по запросу.</p>
+        <div class="tags"><span class="tag">Кабинеты от 20 м²</span><span class="tag">Опенспейс</span><span class="tag">Столовая</span><span class="tag">Оптический интернет</span><span class="tag">Парковка</span></div>
         <div style="margin-top:20px"><button class="btn btn-secondary" data-modal="present">Запросить планировку 155/8</button></div>
       </div>
 
@@ -838,23 +841,23 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
           <img src="img/atmosfera-logo.png" alt="Логотип гостиницы «Атмосфера»" width="262" height="236" style="height:64px;width:auto;display:block">
         </div>
         <h3>Гостиница «Атмосфера»</h3>
-        <p>Работающая гостиница в административном здании 155/8 — для командировочных, монтажных бригад, водителей и партнёров резидентов. Номера от койко-места до джуниор сюита, Wi-Fi, собственная закрытая парковка, в том числе для грузового транспорта. Безналичный расчёт и документы для командировки.</p>
-        <a class="infra-link" href="https://vk.ru/id812551470" target="_blank" rel="noopener">Номера и цены — на странице гостиницы ВКонтакте <span aria-hidden="true">→</span></a>
+        <p>Работающая гостиница в административном здании 155/8 — для командировочных, монтажных бригад, водителей и партнёров резидентов. Номера от койко-места до джуниор сюита, Wi-Fi, собственная закрытая парковка, в том числе для грузового транспорта. Безналичный расчёт и документы для командировки.</p>
+        <a class="infra-link" href="https://vk.ru/id812551470" target="_blank" rel="noopener">Номера и цены — на странице гостиницы ВКонтакте <span aria-hidden="true">→</span></a>
         <div class="tags"><span class="tag">Wi-Fi</span><span class="tag">Закрытая парковка</span><span class="tag">Документы для командировки</span><span class="tag">КМВ</span></div>
       </div>
 
       <div class="infra-card">
         <div class="infra-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>Охрана и безопасность</h3>
-        <p>Закрытая территория под охраной круглосуточно: въезд через КПП, на всей территории действует пропускная система, видеонаблюдение по территории. В складах — системы пожаротушения, на территории — пожарные водоёмы закрытого типа. Вдоль корпусов проходят магистрали оптического интернета, часть складов уже подключена.</p>
+        <p>Закрытая территория под охраной круглосуточно: въезд через КПП, на всей территории действует пропускная система, видеонаблюдение по территории. В складах — системы пожаротушения, на территории — пожарные водоёмы закрытого типа. Вдоль корпусов проходят магистрали оптического интернета, часть складов уже подключена.</p>
         <div class="tags"><span class="tag">Охрана 24/7</span><span class="tag">Пропускная система</span><span class="tag">Пожаротушение</span><span class="tag">Оптический интернет</span></div>
       </div>
 
       <div class="infra-card">
         <div class="infra-icon"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
         <h3>Транспортная доступность</h3>
-        <p>Прямой выезд на Р-217 «Кавказ» и Р-264. Площадка рассчитана на приём до 10 автофургонов в час. 38 км до аэропорта Минеральные Воды (MRV). Железнодорожный путь проходит вдоль складских корпусов — разгрузочный узел проектируется под долгосрочный запрос якорного арендатора. Рядом крупные сортировочные и автомобильные центры СКФО.</p>
-        <div class="tags"><span class="tag">Р-217 «Кавказ»</span><span class="tag">Ж/Д потенциал</span><span class="tag">Аэропорт 38 км</span></div>
+        <p>Прямой выезд на Р-217 «Кавказ» и Р-264. Площадка рассчитана на приём до 10 автофургонов в час. 38 км до аэропорта Минеральные Воды (MRV). Железнодорожный путь проходит вдоль складских корпусов — разгрузочный узел проектируется под долгосрочный запрос якорного арендатора. Рядом крупные сортировочные и автомобильные центры СКФО.</p>
+        <div class="tags"><span class="tag">Р-217 «Кавказ»</span><span class="tag">Ж/Д потенциал</span><span class="tag">Аэропорт 38 км</span></div>
       </div>
     </div>
   </div>
@@ -864,15 +867,15 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 <section class="cta-section" id="contacts">
   <div class="container">
     <div class="cta-inner">
-      <span class="section-label">Свяжитесь с нами</span>
-      <h2>Обсудим ваши задачи и подберём подходящее помещение</h2>
-      <p>Аренда напрямую от собственника. Условия и срок договора обсуждаются, а не выдаются готовым прайсом.</p>
+      <span class="section-label">Свяжитесь с нами</span>
+      <h2>Обсудим ваши задачи и подберём подходящее помещение</h2>
+      <p>Аренда напрямую от собственника. Условия и срок договора обсуждаются, а не выдаются готовым прайсом.</p>
       <div class="cta-buttons">
-        <button class="btn btn-primary btn-lg" data-modal="view">Записаться на показ</button>
+        <button class="btn btn-primary btn-lg" data-modal="view">Записаться на показ</button>
         <a href="docs/StoreKMV_presentation.pdf" class="btn btn-secondary btn-lg" download data-goal="presentation_download">Скачать презентацию</a>
       </div>
       <div class="contacts-row">
-        <div><div class="contact-key">Телефон</div><a href="tel:+79286306344" class="contact-val">+7 928-630-63-44</a></div>
+        <div><div class="contact-key">Телефон</div><a href="tel:+79286306344" class="contact-val">+7 928-630-63-44</a></div>
         <div><div class="contact-key">Telegram</div><a href="https://t.me/vitaliill" target="_blank" rel="noopener" class="contact-val contact-tg"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.1 3.3 1.9 11.5c-1 .4-1 .9-.2 1.2l5.4 1.7 2.1 6.6c.3.6.5.6 1 .6l3-2.9 5 3.7c.9.5 1.5.2 1.7-.8l3.2-15c.3-1.2-.5-1.7-1.5-1.3z"/></svg>@vitaliill</a></div>
         <div><div class="contact-key">Email</div><a href="mailto:i@vllobanov.ru" class="contact-val">i@vllobanov.ru</a></div>
         <div><div class="contact-key">Адрес</div><div class="contact-val">ул. Октябрьская 155/4, Георгиевск</div></div>
@@ -885,7 +888,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   <div class="container">
     <span class="section-label">Как нас найти</span>
     <h2>Георгиевск, ул. Октябрьская 155/4</h2>
-    <p class="lead">Выезд с трассы Р-217 «Кавказ». 38 км от аэропорта Минеральные Воды. Въезд через КПП — строго по предварительной записи.</p>
+    <p class="lead">Выезд с трассы Р-217 «Кавказ». 38 км от аэропорта Минеральные Воды. Въезд через КПП — строго по предварительной записи.</p>
     <div class="map-wrap">
       <iframe src="https://yandex.ru/map-widget/v1/?text=Георгиевск,%20ул.%20Октябрьская,%20155/4&z=16" allowfullscreen loading="lazy" title="StoreKMV — Георгиевск, ул. Октябрьская 155/4"></iframe>
     </div>
@@ -900,27 +903,27 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
         <div class="footer-logo">
           <img src="img/logo-dark.svg" alt="StoreKMV — производственно-складской комплекс" width="268" height="38" style="display:block;height:38px;width:auto">
         </div>
-        <p class="footer-desc">Производственно-складская площадка в Георгиевске: склады трёх температурных режимов, блоки под производство, ответственное хранение, сезонное агрохранение и офисная инфраструктура на закрытой территории 3,6 га.</p>
+        <p class="footer-desc">Производственно-складская площадка в Георгиевске: склады трёх температурных режимов, блоки под производство, ответственное хранение, сезонное агрохранение и офисная инфраструктура на закрытой территории 3,6 га.</p>
       </div>
       <div class="footer-col">
         <h4>Направления</h4>
         <ul>
           <li><a href="#rent">Аренда складов</a></li>
           <li><a href="#storage">Ответственное хранение</a></li>
-          <li><a href="#marketplaces">Склад под ПФЦ и поставки</a></li>
+          <li><a href="#marketplaces">Склад под ПФЦ и поставки</a></li>
           <li><a href="#agro">Сезонное агрохранение</a></li>
           <li><a href="#light-industrial">Производство</a></li>
           <li><a href="pages/equipment.html">Складская техника</a></li>
-          <li><a href="#infrastructure">Офисы и гостиница</a></li>
+          <li><a href="#infrastructure">Офисы и гостиница</a></li>
           <li><a href="pages/investors.html">Инвесторам</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Объекты</h4>
         <ul>
-          <li><a href="#rent">Склад 155 Лит.П (1 536 м²)</a></li>
-          <li><a href="#rent">Склад 155/6 Лит.Б (3 560 м²)</a></li>
-          <li><a href="#rent">Склад 155/4 Лит.В (2 340 м²)</a></li>
+          <li><a href="#rent">Склад 155 Лит.П (1 536 м²)</a></li>
+          <li><a href="#rent">Склад 155/6 Лит.Б (3 560 м²)</a></li>
+          <li><a href="#rent">Склад 155/4 Лит.В (2 340 м²)</a></li>
           <li><a href="#rent">Склад П2 охлаждаемый</a></li>
           <li><a href="#infrastructure">Здание 155/8 (офис)</a></li>
         </ul>
@@ -928,10 +931,10 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <div class="footer-col">
         <h4>Контакты</h4>
         <ul>
-          <li>Телефон: <a href="tel:+79286306344">+7 928-630-63-44</a></li>
+          <li>Телефон: <a href="tel:+79286306344">+7 928-630-63-44</a></li>
           <li>Email: <a href="mailto:i@vllobanov.ru">i@vllobanov.ru</a></li>
           <li>Адрес: ул. Октябрьская 155/4, г. Георгиевск, Ставропольский край, 357820</li>
-          <li>Режим работы: Пн–Пт с 8:00 до 17:00</li>
+          <li>Режим работы: Пн–Пт с 8:00 до 17:00</li>
         </ul>
       </div>
     </div>
@@ -948,7 +951,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   <div class="modal">
     <button class="modal-close" id="modalClose" aria-label="Закрыть">×</button>
     <h3 id="modalTitle">Оставьте заявку</h3>
-    <p class="modal-desc" id="modalDesc">Мы свяжемся с вами в течение рабочего дня.</p>
+    <p class="modal-desc" id="modalDesc">Мы свяжемся с вами в течение рабочего дня.</p>
     <form id="leadForm" novalidate>
       <div class="form-field"><label for="fname">Имя *</label><input id="fname" name="fname" type="text" required></div>
       <div class="form-field"><label for="fcompany">Компания</label><input id="fcompany" name="fcompany" type="text"></div>
@@ -959,7 +962,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
           <option value="">выберите формат</option>
           <option>Аренда склада</option>
           <option>Ответственное хранение</option>
-          <option>Аренда под ПФЦ</option>
+          <option>Аренда под ПФЦ</option>
           <option>Подготовка поставок (пилот)</option>
           <option>Сезонное агрохранение</option>
           <option>Производственный блок</option>
@@ -970,10 +973,10 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <div class="form-field"><label for="femail">Email</label><input id="femail" name="femail" type="email"></div>
       <div class="form-field"><label for="fcomment">Комментарий</label><textarea id="fcomment" name="fcomment" rows="3"></textarea></div>
       <div class="hp-field" aria-hidden="true"><label for="fwebsite">Оставьте это поле пустым</label><input id="fwebsite" name="fwebsite" type="text" tabindex="-1" autocomplete="off"></div>
-      <label class="consent"><input type="checkbox" id="fconsent" name="fconsent" required> Я согласен на обработку персональных данных и ознакомлен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>
+      <label class="consent"><input type="checkbox" id="fconsent" name="fconsent" required> Я согласен на обработку персональных данных и ознакомлен с <a href="privacy.html" target="_blank" rel="noopener">политикой конфиденциальности</a>.</label>
       <button type="submit" id="leadSubmit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:16px">Отправить заявку</button>
       <p class="form-error" id="formError" role="alert"></p>
-      <div class="form-success" id="formSuccess">Спасибо! Заявка отправлена — свяжемся с вами в течение рабочего дня.</div>
+      <div class="form-success" id="formSuccess">Спасибо! Заявка отправлена — свяжемся с вами в течение рабочего дня.</div>
     </form>
   </div>
 </div>
@@ -982,30 +985,30 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   <div class="modal">
     <button class="modal-close" id="calcClose" aria-label="Закрыть">×</button>
     <h3>Рассчитать стоимость аренды</h3>
-    <p class="modal-desc">Выберите объект и параметры — мы покажем ориентировочную стоимость.</p>
+    <p class="modal-desc">Выберите объект и параметры — мы покажем ориентировочную стоимость.</p>
     <div class="form-field">
       <label for="calcWarehouse">Объект</label>
       <select id="calcWarehouse">
-        <option value="155/9" data-area="630" data-min="300" data-price="230">Склад 155/9 — 630 м², от 230 ₽/м²</option>
-        <option value="Лит.П" data-area="1536" data-min="768" data-price="200">Склад 155 Лит.П — 1 536 м², от 200 ₽/м²</option>
-        <option value="155/6 Лит.А" data-area="2170" data-min="1000" data-price="180">Склад 155/6 Лит.А — 2 170 м², от 180 ₽/м²</option>
-        <option value="155/6 Лит.Б" data-area="3560" data-min="1400" data-price="180">Склад 155/6 Лит.Б — 3 560 м², от 180 ₽/м²</option>
-        <option value="155/4 Лит.Б" data-area="1045" data-min="1045" data-price="200">Склад 155/4 Лит.Б — 1 045 м², от 200 ₽/м²</option>
-        <option value="155/4 Лит.В" data-area="2340" data-min="1000" data-price="200">Склад 155/4 Лит.В — 2 340 м², от 200 ₽/м²</option>
-        <option value="Лит.П2" data-area="460" data-min="460" data-price="400">Склад П2 охлаждаемый — 460 м², от 400 ₽/м²</option>
+        <option value="155/9" data-area="630" data-min="300" data-price="230">Склад 155/9 — 630 м², от 230 ₽/м²</option>
+        <option value="Лит.П" data-area="1536" data-min="768" data-price="200">Склад 155 Лит.П — 1 536 м², от 200 ₽/м²</option>
+        <option value="155/6 Лит.А" data-area="2170" data-min="1000" data-price="180">Склад 155/6 Лит.А — 2 170 м², от 180 ₽/м²</option>
+        <option value="155/6 Лит.Б" data-area="3560" data-min="1400" data-price="180">Склад 155/6 Лит.Б — 3 560 м², от 180 ₽/м²</option>
+        <option value="155/4 Лит.Б" data-area="1045" data-min="1045" data-price="200">Склад 155/4 Лит.Б — 1 045 м², от 200 ₽/м²</option>
+        <option value="155/4 Лит.В" data-area="2340" data-min="1000" data-price="200">Склад 155/4 Лит.В — 2 340 м², от 200 ₽/м²</option>
+        <option value="Лит.П2" data-area="460" data-min="460" data-price="400">Склад П2 охлаждаемый — 460 м², от 400 ₽/м²</option>
       </select>
     </div>
     <div class="form-field"><label for="calcArea">Желаемый объём, м²</label><input id="calcArea" type="number" min="0" placeholder=""><div class="calc-min" id="calcAreaMin"></div><div class="calc-hint" id="calcAreaHint"></div></div>
     <div class="form-field"><label for="calcMonths">Срок, мес.</label><input id="calcMonths" type="number" min="1" value="12"></div>
     <div class="form-field">
       <label>Разовые сервисные работы</label>
-      <label class="svc-check"><input type="checkbox" id="svcWork"> Погрузка/Разгрузка — от 2 500 ₽/час</label>
+      <label class="svc-check"><input type="checkbox" id="svcWork"> Погрузка/Разгрузка — от 2 500 ₽/час</label>
     </div>
     <div class="calc-result" id="calcResult">
       <div class="calc-breakdown" id="calcBreakdown"></div>
       <div class="calc-total" id="calcTotal"></div>
     </div>
-    <button class="btn btn-primary" id="calcSend" style="margin-top:16px;width:100%;justify-content:center">Отправить заявку на расчёт</button>
+    <button class="btn btn-primary" id="calcSend" style="margin-top:16px;width:100%;justify-content:center">Отправить заявку на расчёт</button>
   </div>
 </div>
 
@@ -1031,13 +1034,13 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   const calcWarehouse=document.getElementById('calcWarehouse');
 
   const modalConfig={
-    view:{t:'Записаться на показ',d:'Укажите удобное время и мы организуем просмотр объекта.'},
-    pick:{t:'Подобрать помещение',d:'Расскажите о потребностях — площадь, тип, срок.'},
-    present:{t:'Запросить планировку 155/8',d:'Пришлём планировку и свободные варианты по площади.'},
+    view:{t:'Записаться на показ',d:'Укажите удобное время и мы организуем просмотр объекта.'},
+    pick:{t:'Подобрать помещение',d:'Расскажите о потребностях — площадь, тип, срок.'},
+    present:{t:'Запросить планировку 155/8',d:'Пришлём планировку и свободные варианты по площади.'},
     '3pl':{t:'Заявка на ответственное хранение',d:'Расскажите о вашем товаре и объёмах.',f:'Ответственное хранение'},
-    mp:{t:'Пилот: подготовка поставок WB/Ozon',d:'Расскажите о товаре, объёмах и площадках — обсудим условия пилота.',f:'Подготовка поставок (пилот)'},
-    pfc:{t:'Аренда корпуса под ПФЦ Wildberries',d:'Напишите, на каком этапе заявка в WB и когда хотите начать. Ответим в течение рабочего дня.',f:'Аренда под ПФЦ'},
-    agro:{t:'Сезонное хранение сельхозпродукции',d:'Укажите культуру, объём и период хранения — предложим корпус и условия.',f:'Сезонное агрохранение'},
+    mp:{t:'Пилот: подготовка поставок WB/Ozon',d:'Расскажите о товаре, объёмах и площадках — обсудим условия пилота.',f:'Подготовка поставок (пилот)'},
+    pfc:{t:'Аренда корпуса под ПФЦ Wildberries',d:'Напишите, на каком этапе заявка в WB и когда хотите начать. Ответим в течение рабочего дня.',f:'Аренда под ПФЦ'},
+    agro:{t:'Сезонное хранение сельхозпродукции',d:'Укажите культуру, объём и период хранения — предложим корпус и условия.',f:'Сезонное агрохранение'},
     kp:{t:'Запросить коммерческое предложение',d:'Подготовим КП под ваши параметры.'},
     invest:{t:'Запросить инвест-пакет',d:'Пришлём инвестиционный пакет и организуем встречу.'}
   };
@@ -1050,7 +1053,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     if(window.storekmvTildaLead&&window.storekmvTildaLead({source:cfg.t,object:tObj,calc:ctx&&ctx.calc}))return;
     leadSource=key;
     modalTitle.textContent=cfg.t;modalDesc.textContent=cfg.d;
-    if(cfg.f){const fs=document.getElementById('fformat');for(const o of fs.options){if(o.textContent===cfg.f){o.selected=true;break;}}}
+    if(cfg.f){const fs=document.getElementById('fformat');for(const o of fs.options){if(o.textContent.replace(/\s+/g,' ')===cfg.f){o.selected=true;break;}}}
     leadContext={};
     const bpName=document.getElementById('bp-name'),panel=document.getElementById('bld-panel');
     if(panel&&panel.classList.contains('open')&&bpName&&bpName.textContent){leadContext.object=bpName.textContent;}
@@ -1062,6 +1065,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     if(warehouseKey){
       for(const o of calcWarehouse.options){if(o.value===warehouseKey){o.selected=true;break;}}
     }
+    // новая карточка — площадь с чистого листа, а не значение с предыдущего склада
+    document.getElementById('calcArea').value='';
     updateCalcHint();calcOverlay.classList.add('open');calculate();
   }
   document.querySelectorAll('[data-modal]').forEach(b=>b.addEventListener('click',()=>openModal(b.dataset.modal)));
@@ -1137,8 +1142,8 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       rateLine+
       (whole?'<div>Аренда в месяц: <b>'+fmt(monthly)+'</b></div>'+
        '<div>Срок: <b>'+months+' мес. → '+fmt(rentTotal)+'</b></div>':'<div>Срок: <b>'+months+' мес.</b></div>')+
-      (svcWork?'<div>Погрузка/разгрузка: <b>от 2 500 ₽/час</b>, итоговая цена будет рассчитана под ваш груз</div>':'');
-    totalEl.textContent=whole?'Аренда: '+fmt(rentTotal):'Аренда блоком: по запросу';
+      (svcWork?'<div>Погрузка/разгрузка: <b>от 2 500 ₽/час</b>, итоговая цена будет рассчитана под ваш груз</div>':'');
+    totalEl.textContent=whole?'Итого стоимость: '+fmt(rentTotal):'Итого стоимость: запросить';
     result.classList.add('show');
   }
   [calcWarehouse,areaInput,monthsInput].forEach(el=>el.addEventListener('input',()=>{updateCalcHint();calculate();}));
@@ -1180,7 +1185,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     const phone=document.getElementById('fphone').value.trim();
     if(!name){document.getElementById('fname').focus();return showErr('Укажите имя.');}
     if(!phone){document.getElementById('fphone').focus();return showErr('Укажите телефон.');}
-    if(!document.getElementById('fconsent').checked){return showErr('Необходимо согласие на обработку персональных данных.');}
+    if(!document.getElementById('fconsent').checked){return showErr('Необходимо согласие на обработку персональных данных.');}
     if(document.getElementById('fwebsite').value){return;} // honeypot: тихо игнорируем ботов
     const payload={
       source:leadSource||'form',
@@ -1206,16 +1211,33 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       leadForm.reset();
       if(window.ym&&window.YM_ID)ym(window.YM_ID,'reachGoal','lead_submit'); // Метрика подключается отдельно
     }catch(ex){
-      showErr('Не удалось отправить заявку. Позвоните нам: +7 928-630-63-44 или напишите на i@vllobanov.ru');
+      showErr('Не удалось отправить заявку. Позвоните нам: +7 928-630-63-44 или напишите на i@vllobanov.ru');
     }finally{
       btn.disabled=false;btn.textContent=orig;
     }
   });
 
-  // Цели Метрики на скачивание файлов (Метрика подключается отдельно)
+  // Цели Метрики на скачивание файлов (счётчик Tilda-проекта, YM_ID задаёт сборка)
   document.querySelectorAll('[data-goal]').forEach(el=>{
     el.addEventListener('click',()=>{
       if(window.ym&&window.YM_ID)ym(window.YM_ID,'reachGoal',el.dataset.goal);
+    });
+  });
+
+  // Презентация: CDN отдаёт PDF на просмотр, а атрибут download для чужого домена не работает —
+  // скачиваем файл в память и сохраняем на устройство под понятным именем
+  document.querySelectorAll('a[data-goal="presentation_download"]').forEach(a=>{
+    a.addEventListener('click',async e=>{
+      if(!window.fetch||!window.URL||a.dataset.busy)return;
+      e.preventDefault();a.dataset.busy='1';
+      const label=a.textContent;a.textContent='Загружаем презентацию…';
+      try{
+        const r=await fetch(a.href);if(!r.ok)throw new Error(r.status);
+        const url=URL.createObjectURL(await r.blob());
+        const t=document.createElement('a');t.href=url;t.download='StoreKMV_presentation.pdf';
+        document.body.appendChild(t);t.click();t.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);
+      }catch(err){window.location.href=a.href;}
+      finally{a.textContent=label;delete a.dataset.busy;}
     });
   });
 
@@ -1241,7 +1263,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     document.getElementById('bp-area').textContent=b.area;
     document.getElementById('bp-min').textContent=b.min;
     document.getElementById('bp-price').textContent=b.price;
-    document.getElementById('bp-price-note').textContent=b.block?'за корпус целиком · блоком — по запросу':'';
+    document.getElementById('bp-price-note').textContent=b.block?'за корпус целиком':'';
     document.getElementById('bp-note').textContent=b.note;
     // склад: «Рассчитать» + паспорт корпуса; офисы: заявка
     bpActions.innerHTML=b.calc
@@ -1270,7 +1292,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     const cardTitle=(card.querySelector('h3')?.textContent||'Склад').trim();
     // фото уже размечено в карточке (с alt и размерами) — галерея переключает его, а не добавляет второе
     let img=ph.querySelector('img');
-    if(!img){img=new Image();img.alt=cardTitle+' — складской комплекс StoreKMV, Георгиевск';img.loading='lazy';img.onerror=()=>img.remove();img.src=files[0];ph.appendChild(img);}
+    if(!img){img=new Image();img.alt=cardTitle+' — складской комплекс StoreKMV, Георгиевск';img.loading='lazy';img.onerror=()=>img.remove();img.src=files[0];ph.appendChild(img);}
     if(n>1){
       const dots=[];
       const show=i=>{idx=(i+n)%n;img.src=files[idx];dots.forEach((d,j)=>d.classList.toggle('active',j===idx));};
