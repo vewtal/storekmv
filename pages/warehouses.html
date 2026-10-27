@@ -104,6 +104,21 @@ p{color:var(--muted)}
 .ph-dots{position:absolute;right:14px;bottom:14px;z-index:3;display:flex;gap:6px}
 .ph-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.5);transition:background .2s,transform .2s}
 .ph-dots span.on{background:#fff;transform:scale(1.25)}
+.object-photo .ph-track img{cursor:zoom-in}
+/* Просмотр фото на весь экран */
+.ph-lightbox{position:fixed;inset:0;z-index:1100;background:rgba(9,22,41,0.97);display:none}
+.ph-lightbox.open{display:block}
+.ph-lb-track{position:absolute;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.ph-lb-track::-webkit-scrollbar{display:none}
+.ph-lb-track figure{flex:0 0 100%;height:100%;margin:0;padding:56px 72px;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;box-sizing:border-box}
+.ph-lb-track img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px}
+.ph-lightbox .ph-nav{opacity:1;width:48px;height:48px;font-size:1.75rem;background:rgba(255,255,255,0.12)}
+.ph-lightbox .ph-nav:hover{background:rgba(255,255,255,0.25)}
+.ph-lightbox .ph-prev{left:16px}.ph-lightbox .ph-next{right:16px}
+.ph-lb-close{position:absolute;top:12px;right:12px;z-index:3;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,0.12);color:#fff;font-size:1.75rem;line-height:1;cursor:pointer}
+.ph-lb-close:hover{background:rgba(255,255,255,0.25)}
+.ph-lb-count{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,0.8);font-size:0.875rem;font-weight:600}
+@media (max-width:640px){.ph-lb-track figure{padding:56px 8px}.ph-lightbox .ph-nav{display:none}}
 .object-badges{position:absolute;top:14px;right:14px;display:flex;gap:6px;flex-wrap:wrap;z-index:2}
 .badge{display:inline-block;padding:5px 10px;border-radius:4px;font-size:0.6875rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase}
 .badge-cold{background:#E3F0FA;color:#1F5A8E}
@@ -495,14 +510,16 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   renderCards('all');
 
   // Листание фото: стрелки по кругу, свайп — нативный scroll-snap, точки следуют за прокруткой
-  grid.addEventListener('click',e=>{
-    const btn=e.target.closest('.ph-nav');
-    if(!btn)return;
-    const track=btn.parentNode.querySelector('.ph-track');
+  function stepPhoto(track,dir){
     const w=track.clientWidth,count=track.children.length;
     const cur=Math.round(track.scrollLeft/w);
-    const next=(cur+Number(btn.dataset.dir)+count)%count;
-    track.scrollTo({left:next*w,behavior:'smooth'});
+    track.scrollTo({left:((cur+dir+count)%count)*w,behavior:'smooth'});
+  }
+  grid.addEventListener('click',e=>{
+    const btn=e.target.closest('.ph-nav');
+    if(btn){stepPhoto(btn.parentNode.querySelector('.ph-track'),Number(btn.dataset.dir));return;}
+    const img=e.target.closest('.ph-track img');
+    if(img)openLightbox(img);
   });
   grid.addEventListener('scroll',e=>{
     const track=e.target;
@@ -511,6 +528,61 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     const cur=Math.round(track.scrollLeft/track.clientWidth);
     dots.forEach((d,i)=>d.classList.toggle('on',i===cur));
   },true);
+
+  // Просмотр фото на весь экран: клик по фото в карточке, листание стрелками, клавишами и свайпом
+  const lb=document.createElement('div');
+  lb.className='ph-lightbox';
+  lb.setAttribute('role','dialog');
+  lb.setAttribute('aria-modal','true');
+  lb.setAttribute('aria-label','Фото склада');
+  lb.innerHTML='<div class="ph-lb-track"></div>'
+    +'<button type="button" class="ph-lb-close" aria-label="Закрыть">&times;</button>'
+    +'<button type="button" class="ph-nav ph-prev" data-dir="-1" aria-label="Предыдущее фото">&lsaquo;</button>'
+    +'<button type="button" class="ph-nav ph-next" data-dir="1" aria-label="Следующее фото">&rsaquo;</button>'
+    +'<div class="ph-lb-count" aria-live="polite"></div>';
+  document.body.appendChild(lb);
+  const lbTrack=lb.querySelector('.ph-lb-track'),lbCount=lb.querySelector('.ph-lb-count');
+  let lbOpener=null;
+  function lbIndex(){return Math.round(lbTrack.scrollLeft/lbTrack.clientWidth);}
+  function lbUpdate(){lbCount.textContent=(lbIndex()+1)+' / '+lbTrack.children.length;}
+  function openLightbox(img){
+    const imgs=[].slice.call(img.parentNode.querySelectorAll('img'));
+    lbTrack.replaceChildren(...imgs.map(src=>{
+      const f=document.createElement('figure'),i=document.createElement('img');
+      i.src=src.currentSrc||src.src;i.alt=src.alt;f.appendChild(i);return f;
+    }));
+    const many=imgs.length>1;
+    lb.querySelectorAll('.ph-nav,.ph-lb-count').forEach(el=>{el.hidden=!many;});
+    lbOpener=document.activeElement;
+    lb.classList.add('open');
+    document.body.style.overflow='hidden';
+    lbTrack.scrollLeft=imgs.indexOf(img)*lbTrack.clientWidth;
+    lbUpdate();
+    lb.querySelector('.ph-lb-close').focus();
+  }
+  function closeLightbox(){
+    lb.classList.remove('open');
+    document.body.style.overflow='';
+    if(lbOpener&&typeof lbOpener.focus==='function')lbOpener.focus();
+    lbOpener=null;
+  }
+  lbTrack.addEventListener('scroll',lbUpdate);
+  lb.addEventListener('click',e=>{
+    const nav=e.target.closest('.ph-nav');
+    if(nav){stepPhoto(lbTrack,Number(nav.dataset.dir));return;}
+    if(e.target.closest('.ph-lb-close')||!e.target.closest('img'))closeLightbox();
+  });
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')closeLightbox();
+    else if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();stepPhoto(lbTrack,e.key==='ArrowRight'?1:-1);}
+    else if(e.key==='Tab'){
+      const f=[].slice.call(lb.querySelectorAll('button:not([hidden])'));
+      const i=f.indexOf(document.activeElement);
+      e.preventDefault();
+      f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus();
+    }
+  });
 
   // Фильтры
   const filterBtns=document.querySelectorAll('.filter-btn');
