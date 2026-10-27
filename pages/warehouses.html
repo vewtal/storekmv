@@ -93,6 +93,17 @@ p{color:var(--muted)}
 .object-photo::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:24px 24px}
 .object-photo .ph-num{position:absolute;left:16px;bottom:12px;font-size:1.5rem;font-weight:800;color:rgba(255,255,255,0.85);letter-spacing:-0.02em}
 .object-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.ph-track{position:absolute;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;z-index:1}
+.ph-track::-webkit-scrollbar{display:none}
+.object-photo .ph-track img{position:static;flex:0 0 100%;scroll-snap-align:start}
+.ph-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:36px;height:36px;border:0;border-radius:50%;background:rgba(9,22,41,0.55);color:#fff;font-size:1.25rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s,background .15s}
+.ph-prev{left:10px}.ph-next{right:10px}
+.object-photo:hover .ph-nav,.ph-nav:focus-visible{opacity:1}
+.ph-nav:hover{background:rgba(9,22,41,0.8)}
+@media (hover:none){.ph-nav{opacity:1}}
+.ph-dots{position:absolute;right:14px;bottom:14px;z-index:3;display:flex;gap:6px}
+.ph-dots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.5);transition:background .2s,transform .2s}
+.ph-dots span.on{background:#fff;transform:scale(1.25)}
 .object-badges{position:absolute;top:14px;right:14px;display:flex;gap:6px;flex-wrap:wrap;z-index:2}
 .badge{display:inline-block;padding:5px 10px;border-radius:4px;font-size:0.6875rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase}
 .badge-cold{background:#E3F0FA;color:#1F5A8E}
@@ -441,12 +452,28 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   const grid=document.getElementById('grid');
 
+  // Сколько фото у корпуса в img/warehouses/<id>-N.jpg
+  const PHOTO_COUNT={'155-9':2,'lit-p':3,'155-6-a':2,'155-6-b':3,'155-4-b':3,'155-4-v':2,'p2':2};
+  function photoSlider(o){
+    const n=PHOTO_COUNT[o.id]||1;
+    const alt=esc(o.name)+' в Георгиевске: '+esc(o.badge.toLowerCase())+' корпус '+esc(o.area)+', температура '+esc(o.temp);
+    let imgs='';
+    for(let i=1;i<=n;i++)imgs+='<img src="../img/warehouses/'+o.id+'-'+i+'.jpg" alt="'+alt+(i>1?', фото '+i:'')+'" loading="lazy" onerror="this.remove()">';
+    if(n<2)return '<div class="ph-track">'+imgs+'</div>';
+    let dots='';
+    for(let i=0;i<n;i++)dots+='<span'+(i?'':' class="on"')+'></span>';
+    return '<div class="ph-track">'+imgs+'</div>'
+      +'<button type="button" class="ph-nav ph-prev" data-dir="-1" aria-label="Предыдущее фото">&lsaquo;</button>'
+      +'<button type="button" class="ph-nav ph-next" data-dir="1" aria-label="Следующее фото">&rsaquo;</button>'
+      +'<div class="ph-dots" aria-hidden="true">'+dots+'</div>';
+  }
+
   function renderCards(filter){
     const list=objects.filter(o=>filter==='all'||o.cat===filter);
     grid.innerHTML=list.map(o=>{
       const tags=o.tags.map(t=>'<span class="tag">'+esc(t)+'</span>').join('');
       return '<article class="object-card" data-cat="'+o.cat+'">'
-        +'<div class="object-photo"><div class="object-badges"><span class="badge badge-'+o.cat+'">'+esc(o.badge)+'</span></div><img src="../img/warehouses/'+o.id+'-1.jpg" alt="'+esc(o.name)+' в Георгиевске: '+esc(o.badge.toLowerCase())+' корпус '+esc(o.area)+', температура '+esc(o.temp)+'" loading="lazy" onerror="this.remove()"><div class="ph-num">'+esc(o.name.replace('Склад ',''))+'</div></div>'
+        +'<div class="object-photo"><div class="object-badges"><span class="badge badge-'+o.cat+'">'+esc(o.badge)+'</span></div>'+photoSlider(o)+'<div class="ph-num">'+esc(o.name.replace('Склад ',''))+'</div></div>'
         +'<div class="object-body">'
           +'<h3>'+esc(o.name)+'</h3>'
           +'<p>'+esc(o.desc)+'</p>'
@@ -466,6 +493,24 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     }).join('');
   }
   renderCards('all');
+
+  // Листание фото: стрелки по кругу, свайп — нативный scroll-snap, точки следуют за прокруткой
+  grid.addEventListener('click',e=>{
+    const btn=e.target.closest('.ph-nav');
+    if(!btn)return;
+    const track=btn.parentNode.querySelector('.ph-track');
+    const w=track.clientWidth,count=track.children.length;
+    const cur=Math.round(track.scrollLeft/w);
+    const next=(cur+Number(btn.dataset.dir)+count)%count;
+    track.scrollTo({left:next*w,behavior:'smooth'});
+  });
+  grid.addEventListener('scroll',e=>{
+    const track=e.target;
+    if(!track.classList||!track.classList.contains('ph-track'))return;
+    const dots=track.parentNode.querySelectorAll('.ph-dots span');
+    const cur=Math.round(track.scrollLeft/track.clientWidth);
+    dots.forEach((d,i)=>d.classList.toggle('on',i===cur));
+  },true);
 
   // Фильтры
   const filterBtns=document.querySelectorAll('.filter-btn');
