@@ -134,6 +134,7 @@ p{color:var(--muted)}
 .stat-item svg{color:var(--orange)}
 .stat-num{font-size:1.25rem;font-weight:700;letter-spacing:-0.01em;line-height:1.2}
 .stat-lbl{font-size:0.75rem;color:rgba(255,255,255,0.55)}
+@media (max-width:1180px){.stats-row{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:24px}.stat-item:nth-child(4){border-right:0}}
 
 /* Directions */
 .directions-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
@@ -162,6 +163,21 @@ p{color:var(--muted)}
 .gal-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.55);cursor:pointer;transition:background .15s}
 .gal-dot.active{background:var(--orange)}
 @media (hover:none){.gal-nav{opacity:1}}
+#rent .object-photo img{cursor:zoom-in}
+/* Просмотр фото на весь экран */
+.ph-lightbox{position:fixed;inset:0;z-index:1100;background:rgba(9,22,41,0.97);display:none}
+.ph-lightbox.open{display:block}
+.ph-lb-track{position:absolute;inset:0;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.ph-lb-track::-webkit-scrollbar{display:none}
+.ph-lb-track figure{flex:0 0 100%;height:100%;margin:0;padding:56px 72px;display:flex;align-items:center;justify-content:center;scroll-snap-align:start;box-sizing:border-box}
+.ph-lb-track img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px}
+.ph-lb-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:48px;height:48px;border:0;border-radius:50%;background:rgba(255,255,255,0.12);color:#fff;font-size:1.75rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ph-lb-nav:hover{background:rgba(255,255,255,0.25)}
+.ph-lb-prev{left:16px}.ph-lb-next{right:16px}
+.ph-lb-close{position:absolute;top:12px;right:12px;z-index:3;width:44px;height:44px;border:0;border-radius:50%;background:rgba(255,255,255,0.12);color:#fff;font-size:1.75rem;line-height:1;cursor:pointer}
+.ph-lb-close:hover{background:rgba(255,255,255,0.25)}
+.ph-lb-count{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:3;color:rgba(255,255,255,0.8);font-size:0.875rem;font-weight:600}
+@media (max-width:640px){.ph-lb-track figure{padding:56px 8px}.ph-lb-nav{display:none}}
 .logo-wm{text-transform:uppercase}
 .logo-wm>span{color:var(--orange)}
 .object-photo::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:24px 24px}
@@ -245,9 +261,10 @@ p{color:var(--muted)}
 
 /* Footer */
 footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32px;font-size:0.875rem}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+.footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.4fr;gap:48px;margin-bottom:48px}
 .footer-col h4{color:var(--white);font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:18px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin:0;padding:0}
+.footer-col a[href^="tel:"],.footer-col a[href^="mailto:"]{white-space:nowrap}
 .footer-col a{color:rgba(255,255,255,0.6);transition:color .15s}
 .footer-col a:hover{color:var(--orange)}
 .footer-logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.125rem;color:var(--white);margin-bottom:16px}
@@ -295,6 +312,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
 .calc-hint{font-size:0.75rem;color:var(--orange);margin-top:6px;display:none}
 .calc-hint.show{display:block}
 
+@media (max-width:1340px){.nav-links,.nav-phone{display:none}.menu-toggle{display:inline-flex}}
 @media (max-width:980px){
   .nav-links,.nav-phone{display:none}
   .menu-toggle{display:inline-flex}
@@ -694,7 +712,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
             <div><div class="param-key">Отопление</div><div class="param-val">Газовая котельная</div></div>
             <div><div class="param-key">Мощность</div><div class="param-val">20 кВт</div></div>
           </div>
-          <div class="tags"><span class="tag">Газовое отопление</span><span class="tag">Вентиляция</span><span class="tag">Офис</span></div>
+          <div class="tags"><span class="tag">Газовое отопление</span><span class="tag">Вентиляция</span><span class="tag">Мобильная рампа</span></div>
           <div class="price">от 200 ₽/м² <small>/мес.</small></div>
           <div class="object-actions">
             <button class="btn btn-primary" data-calc="155/4 Лит.Б" data-area="1026" data-min="1026" data-price="200">Рассчитать</button>
@@ -783,7 +801,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       <div class="dark-panel">
         <p class="panel-title">Что получает оператор</p>
         <ul class="op-list">
-          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 21V12h6v9"/></svg><span class="op-item-text">155/4 Лит.Б — 1 026 м², высота 4,8 м, офис внутри, 20 кВт</span></li>
+          <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 21V12h6v9"/></svg><span class="op-item-text">155/4 Лит.Б — 1 026 м², высота 4,8 м, своя мобильная рампа, 20 кВт</span></li>
           <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg><span class="op-item-text">В Лит.Б своя газовая котельная: зимой +17…+20 °C. Навес над погрузкой от 2 м</span></li>
           <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 21V12h6v9"/></svg><span class="op-item-text">155/9 — отдельно стоящий, 630 м², высота 6 м, 10 кВт, свой подъезд и парковка</span></li>
           <li class="op-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 14.76V3.5a2.5 2.5 0 00-5 0v11.26a4.5 4.5 0 105 0z"/></svg><span class="op-item-text">В 155/9 отопления пока нет — проведём своими силами при долгосрочном договоре</span></li>
@@ -1248,7 +1266,7 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
     'lit-b-6':{name:'Склад 155/6 Лит.Б',area:'3 430 м²',type:'Неотапливаемый · +5…+25 °C',min:'1 319 м²',price:'от 180 ₽/м²',block:1,note:'Крупнейший корпус · 2 секции',calc:'155/6 Лит.Б',cat:'155-6-b'},
     'lit-p2':{name:'Склад П2 охлаждаемый',area:'460 м²',type:'Охлаждаемый · около +15 °C',min:'460 м²',price:'от 400 ₽/м²',note:'Пандус · стабильная +15 °C',calc:'Лит.П2',cat:'p2'},
     'lit-155-9':{name:'Склад 155/9',area:'630 м²',type:'Неотапливаемый · +5…+20 °C',min:'300 м²',price:'от 230 ₽/м²',block:1,note:'Антипыль · своя парковка',calc:'155/9',cat:'155-9'},
-    'lit-b-4':{name:'Склад 155/4 Лит.Б',area:'1 026 м²',type:'Отапливаемый · +17…+20 °C',min:'1 026 м²',price:'от 200 ₽/м²',note:'Газовая котельная · вентиляция',calc:'155/4 Лит.Б',cat:'155-4-b'},
+    'lit-b-4':{name:'Склад 155/4 Лит.Б',area:'1 026 м²',type:'Отапливаемый · +17…+20 °C',min:'1 026 м²',price:'от 200 ₽/м²',note:'Газовая котельная · вентиляция · мобильная рампа',calc:'155/4 Лит.Б',cat:'155-4-b'},
     'lit-v-4':{name:'Склад 155/4 Лит.В',area:'2 340 м²',type:'Отапливаемый · +15…+20 °C',min:'1 000 м²',price:'от 200 ₽/м²',block:1,note:'Газовое отопление · навес · офис',calc:'155/4 Лит.В',cat:'155-4-v'},
     'adm-155-8':{name:'Административное здание 155/8',area:'1 800 м²',type:'3 этажа · кабинеты, опенспейс, столовая',min:'от 20 м²',price:'По запросу',note:'Гостиница «Атмосфера» · оптический интернет',office:'present'},
     'lit-a-4':{name:'Офис 155/4 Лит.А',area:'54 м²',type:'Одноэтажное офисное здание',min:'54 м²',price:'По запросу',note:'Рядом со складами 155/4',office:'view'}
@@ -1301,6 +1319,64 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,0.7);padding:72px 0 32
       const prev=document.createElement('button');prev.type='button';prev.className='gal-nav gal-prev';prev.setAttribute('aria-label','Предыдущее фото');prev.textContent='‹';prev.addEventListener('click',e=>{e.stopPropagation();show(idx-1);});
       const next=document.createElement('button');next.type='button';next.className='gal-nav gal-next';next.setAttribute('aria-label','Следующее фото');next.textContent='›';next.addEventListener('click',e=>{e.stopPropagation();show(idx+1);});
       ph.appendChild(prev);ph.appendChild(next);ph.appendChild(dotsWrap);
+    }
+    img.addEventListener('click',()=>openLightbox(files,idx,cardTitle));
+  });
+
+  // Просмотр фото на весь экран: клик по фото в карточке, листание стрелками, клавишами и свайпом
+  const lb=document.createElement('div');
+  lb.className='ph-lightbox';
+  lb.setAttribute('role','dialog');
+  lb.setAttribute('aria-modal','true');
+  lb.setAttribute('aria-label','Фото склада');
+  lb.innerHTML='<div class="ph-lb-track"></div>'
+    +'<button type="button" class="ph-lb-close" aria-label="Закрыть">&times;</button>'
+    +'<button type="button" class="ph-lb-nav ph-lb-prev" data-dir="-1" aria-label="Предыдущее фото">&lsaquo;</button>'
+    +'<button type="button" class="ph-lb-nav ph-lb-next" data-dir="1" aria-label="Следующее фото">&rsaquo;</button>'
+    +'<div class="ph-lb-count" aria-live="polite"></div>';
+  document.body.appendChild(lb);
+  const lbTrack=lb.querySelector('.ph-lb-track'),lbCount=lb.querySelector('.ph-lb-count');
+  let lbOpener=null;
+  function lbIndex(){return Math.round(lbTrack.scrollLeft/lbTrack.clientWidth);}
+  function lbUpdate(){lbCount.textContent=(lbIndex()+1)+' / '+lbTrack.children.length;}
+  function lbStep(dir){
+    const count=lbTrack.children.length;
+    lbTrack.scrollTo({left:((lbIndex()+dir+count)%count)*lbTrack.clientWidth,behavior:'smooth'});
+  }
+  function openLightbox(srcs,start,title){
+    lbTrack.replaceChildren(...srcs.map((src,i)=>{
+      const f=document.createElement('figure'),im=document.createElement('img');
+      im.src=src;im.alt=title+' — фото '+(i+1);f.appendChild(im);return f;
+    }));
+    lb.querySelectorAll('.ph-lb-nav,.ph-lb-count').forEach(el=>{el.hidden=srcs.length<2;});
+    lbOpener=document.activeElement;
+    lb.classList.add('open');
+    document.body.style.overflow='hidden';
+    lbTrack.scrollLeft=start*lbTrack.clientWidth;
+    lbUpdate();
+    lb.querySelector('.ph-lb-close').focus();
+  }
+  function closeLightbox(){
+    lb.classList.remove('open');
+    document.body.style.overflow='';
+    if(lbOpener&&typeof lbOpener.focus==='function')lbOpener.focus();
+    lbOpener=null;
+  }
+  lbTrack.addEventListener('scroll',lbUpdate);
+  lb.addEventListener('click',e=>{
+    const nav=e.target.closest('.ph-lb-nav');
+    if(nav){lbStep(Number(nav.dataset.dir));return;}
+    if(e.target.closest('.ph-lb-close')||!e.target.closest('img'))closeLightbox();
+  });
+  document.addEventListener('keydown',e=>{
+    if(!lb.classList.contains('open'))return;
+    if(e.key==='Escape')closeLightbox();
+    else if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();lbStep(e.key==='ArrowRight'?1:-1);}
+    else if(e.key==='Tab'){
+      const f=[].slice.call(lb.querySelectorAll('button:not([hidden])'));
+      const i=f.indexOf(document.activeElement);
+      e.preventDefault();
+      f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus();
     }
   });
 })();
